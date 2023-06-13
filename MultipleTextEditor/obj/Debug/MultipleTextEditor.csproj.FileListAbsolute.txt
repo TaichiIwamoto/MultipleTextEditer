@@ -8,3 +8,13 @@ C:\Users\manat\source\repos\MultipleTextEditor\MultipleTextEditor\bin\Debug\Mult
 C:\Users\manat\source\repos\MultipleTextEditor\MultipleTextEditor\bin\Debug\MultipleTextEditor.pdb
 C:\Users\manat\source\repos\MultipleTextEditor\MultipleTextEditor\obj\Debug\MultipleTextEditor.exe
 C:\Users\manat\source\repos\MultipleTextEditor\MultipleTextEditor\obj\Debug\MultipleTextEditor.pdb
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\bin\Debug\MultipleTextEditor.exe.config
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\bin\Debug\MultipleTextEditor.exe
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\bin\Debug\MultipleTextEditor.pdb
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.AssemblyReference.cache
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form1.resources
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.Properties.Resources.resources
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.GenerateResource.cache
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.CoreCompileInputs.cache
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.exe
+C:\Users\tellu\Documents\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.pdb

@@ -146,6 +146,9 @@ namespace MultipleTextEditor
             ChangeToolStripMenuItemBackgroundColors();
         }
 
-        
+        private void autoSave_Tick(object sender, EventArgs e)
+        {
+            File.WriteAllText(FileName, text_memo.Text);
+        }
     }
 }
