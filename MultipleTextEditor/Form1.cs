@@ -141,5 +141,17 @@ namespace MultipleTextEditor
         {
 
         }
+
+        private void フォントToolStripMenuItem_Click(Object sender, EventArgs e)
+        {
+            ChangeToolStripMenuItemBackgroundColors();
+            // フォントダイアログを表示してユーザーにフォントサイズを選択させる
+            FontDialog fontDialog = new FontDialog();
+            if (fontDialog.ShowDialog() == DialogResult.OK)
+            {
+                // 選択されたフォントサイズを適用する
+                text_memo.Font = fontDialog.Font;
+            }
+        }
     }
 }

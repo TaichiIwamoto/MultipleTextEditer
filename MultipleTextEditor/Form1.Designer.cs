@@ -167,7 +167,6 @@ namespace MultipleTextEditor
             // 設定ToolStripMenuItem
             // 
             this.設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.フォントサイズToolStripMenuItem,
             this.フォントToolStripMenuItem,
             this.スタートアップToolStripMenuItem,
             this.リストの型ToolStripMenuItem,
@@ -177,17 +176,15 @@ namespace MultipleTextEditor
             this.設定ToolStripMenuItem.Text = "設定";
             this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
             // 
-            // フォントサイズToolStripMenuItem
-            // 
-            this.フォントサイズToolStripMenuItem.Name = "フォントサイズToolStripMenuItem";
-            this.フォントサイズToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.フォントサイズToolStripMenuItem.Text = "フォントサイズ";
+            
             // 
             // フォントToolStripMenuItem
             // 
             this.フォントToolStripMenuItem.Name = "フォントToolStripMenuItem";
             this.フォントToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.フォントToolStripMenuItem.Text = "フォント";
+            this.フォントToolStripMenuItem.Click += new System.EventHandler(this.フォントToolStripMenuItem_Click);
+
             // 
             // スタートアップToolStripMenuItem
             // 
