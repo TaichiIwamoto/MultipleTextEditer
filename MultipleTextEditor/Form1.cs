@@ -9,13 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
-using Libraryimport;
 
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetWindowRect(IntPtr hWnd, out Rect rect);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmGetWindowAttribute(IntPtr hWnd, int dwAttribute, out Rect rect, int cbAttribute);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowDC(IntPtr hWnd);
+
+        [DllImport("gdi32.dll")]
+        public static extern int BitBlt(IntPtr hDestDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hdc);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool IsWindow(IntPtr hWnd);
         private string FileName = ""; //現在開いているファイル名
+        private Timer timer; //autoSavetimerのtimer
+
 
         //MenuStripの背景色をデフォルトカラーに戻す関数
         private void ChangeToolStripMenuItemBackgroundColors()
@@ -97,51 +119,13 @@ namespace MultipleTextEditor
             ノートToolStripMenuItem.BackColor = Color.Gray;
         }
 
-        private void メモToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            メモToolStripMenuItem.BackColor = Color.Gray;
-            text_memo.SelectionBullet = false;
-        }
-
-        private void リストToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            リストToolStripMenuItem.BackColor = Color.Gray;
-        }
-
-        private void バレットToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            //バレットの背景色変更
-            バレットToolStripMenuItem.BackColor = Color.Gray;
-
-            //箇条書き機能の有効化
-            text_memo.SelectionBullet = true;
-
-            
-        }
-
-        private void イメージToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            イメージToolStripMenuItem.BackColor = Color.Gray;
-        }
-
-        private void カメラToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            カメラToolStripMenuItem.BackColor = Color.Gray;
-        }
+        
 
         private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
         }
-        private void 自動保存ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void フォントToolStripMenuItem_Click(Object sender, EventArgs e)
         {
@@ -158,6 +142,12 @@ namespace MultipleTextEditor
         private void autoSave_Tick(object sender, EventArgs e)
         {
             File.WriteAllText(FileName, text_memo.Text);
+
+            timer = new Timer();
+            timer.Interval = 3000; // 3秒
+            timer.Tick += Timer_Tick;
+
+            timer.Start();
         }
 
         private const int SRCCOPY = 13369376;
@@ -171,33 +161,7 @@ namespace MultipleTextEditor
             public int bottom;
         }
 
-        [LibraryImport("user32.dll")]
-        private static partial IntPtr GetWindowRect(IntPtr hWnd, out Rect rect);
 
-        [LibraryImport("user32.dll")]
-        private static partial IntPtr GetForegroundWindow();
-
-        [LibraryImport("dwmapi.dll")]
-        private static partial int DwmGetWindowAttribute(IntPtr hWnd, int dwAttribute, out Rect rect, int cbAttribute);
-
-        [LibraryImport("user32.dll")]
-        public static partial IntPtr GetWindowDC(IntPtr hWnd);
-
-        [LibraryImport("gdi32.dll")]
-        public static partial int BitBlt(IntPtr hDestDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
-
-        [LibraryImport("user32.dll")]
-        public static partial IntPtr ReleaseDC(IntPtr hWnd, IntPtr hdc);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool IsWindow(IntPtr hWnd);
-
-
-        public Form1()
-        {
-            InitializeComponent();
-        }
 
         private void fullScreenCapture()
         {
@@ -296,12 +260,30 @@ namespace MultipleTextEditor
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeToolStripMenuItemBackgroundColors();
-            //バレットの背景色変更
-            バレットToolStripMenuItem.BackColor = Color.Gray;
-
             //箇条書き機能の有効化
             text_memo.SelectionBullet = true;
         }
+
+        private void list_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.Write("Hello");
+        }
+
+        private void memo_CheckedChanged(object sender, EventArgs e)
+        {
+            text_memo.SelectionBullet = false;
+        }
+
+        private void screenshot_CheckedChanged(object sender, EventArgs e)
+        {
+            fullScreenCapture();
+        }
+
+        private void image_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
