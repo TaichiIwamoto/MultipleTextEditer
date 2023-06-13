@@ -29,6 +29,7 @@ namespace MultipleTextEditor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新規ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,8 +37,6 @@ namespace MultipleTextEditor
             this.上書き保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ノートToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.メモToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.リストToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,9 +47,11 @@ namespace MultipleTextEditor
             this.フォントサイズToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.フォントToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.スタートアップToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.言語変更ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.リストの型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.text_memo = new System.Windows.Forms.RichTextBox();
+            this.自動保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,8 +60,6 @@ namespace MultipleTextEditor
             this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
-            this.編集ToolStripMenuItem,
-            this.表示ToolStripMenuItem,
             this.ノートToolStripMenuItem,
             this.メモToolStripMenuItem,
             this.リストToolStripMenuItem,
@@ -90,14 +89,14 @@ namespace MultipleTextEditor
             // 新規ToolStripMenuItem
             // 
             this.新規ToolStripMenuItem.Name = "新規ToolStripMenuItem";
-            this.新規ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.新規ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.新規ToolStripMenuItem.Text = "新規";
             this.新規ToolStripMenuItem.Click += new System.EventHandler(this.新規ToolStripMenuItem_Click);
             // 
             // 開くToolStripMenuItem
             // 
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.開くToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.開くToolStripMenuItem.Text = "開く";
             this.開くToolStripMenuItem.Click += new System.EventHandler(this.開くToolStripMenuItem_Click);
             // 
@@ -105,37 +104,23 @@ namespace MultipleTextEditor
             // 
             this.上書き保存ToolStripMenuItem.Enabled = false;
             this.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem";
-            this.上書き保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.上書き保存ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.上書き保存ToolStripMenuItem.Text = "上書き保存";
             this.上書き保存ToolStripMenuItem.Click += new System.EventHandler(this.上書き保存ToolStripMenuItem_Click);
             // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.保存ToolStripMenuItem.Text = "名前を付けて保存";
             this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
-            // 
-            // 編集ToolStripMenuItem
-            // 
-            this.編集ToolStripMenuItem.Name = "編集ToolStripMenuItem";
-            this.編集ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.編集ToolStripMenuItem.Text = "編集";
-            this.編集ToolStripMenuItem.Click += new System.EventHandler(this.編集ToolStripMenuItem_Click);
-            // 
-            // 表示ToolStripMenuItem
-            // 
-            this.表示ToolStripMenuItem.Name = "表示ToolStripMenuItem";
-            this.表示ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.表示ToolStripMenuItem.Text = "表示";
-            this.表示ToolStripMenuItem.Click += new System.EventHandler(this.表示ToolStripMenuItem_Click);
             // 
             // ノートToolStripMenuItem
             // 
@@ -185,8 +170,8 @@ namespace MultipleTextEditor
             this.フォントサイズToolStripMenuItem,
             this.フォントToolStripMenuItem,
             this.スタートアップToolStripMenuItem,
-            this.言語変更ToolStripMenuItem,
-            this.リストの型ToolStripMenuItem});
+            this.リストの型ToolStripMenuItem,
+            this.自動保存ToolStripMenuItem});
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
             this.設定ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.設定ToolStripMenuItem.Text = "設定";
@@ -210,12 +195,6 @@ namespace MultipleTextEditor
             this.スタートアップToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.スタートアップToolStripMenuItem.Text = "スタートアップ";
             // 
-            // 言語変更ToolStripMenuItem
-            // 
-            this.言語変更ToolStripMenuItem.Name = "言語変更ToolStripMenuItem";
-            this.言語変更ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.言語変更ToolStripMenuItem.Text = "言語変更";
-            // 
             // リストの型ToolStripMenuItem
             // 
             this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
@@ -230,6 +209,13 @@ namespace MultipleTextEditor
             this.text_memo.Size = new System.Drawing.Size(800, 426);
             this.text_memo.TabIndex = 2;
             this.text_memo.Text = "";
+            // 
+            // 自動保存ToolStripMenuItem
+            // 
+            this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
+            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.自動保存ToolStripMenuItem.Text = "自動保存";
+            this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -256,8 +242,6 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 上書き保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 新規ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 編集ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 表示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ノートToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem メモToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem リストToolStripMenuItem;
@@ -268,9 +252,11 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem フォントサイズToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem フォントToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem スタートアップToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 言語変更ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem リストの型ToolStripMenuItem;
         private System.Windows.Forms.RichTextBox text_memo;
+        private System.Windows.Forms.ToolStripMenuItem 自動保存ToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

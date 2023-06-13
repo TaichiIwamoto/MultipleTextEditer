@@ -89,17 +89,6 @@ namespace MultipleTextEditor
             ChangeToolStripMenuItemBackgroundColors();
         }
 
-        private void 編集ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            編集ToolStripMenuItem.BackColor = Color.Gray;
-        }
-
-        private void 表示ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeToolStripMenuItemBackgroundColors();
-            表示ToolStripMenuItem.BackColor = Color.Gray;
-        }
 
         private void ノートToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -127,6 +116,8 @@ namespace MultipleTextEditor
 
             //箇条書き機能の有効化
             text_memo.SelectionBullet = true;
+
+            
         }
 
         private void イメージToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,6 +137,9 @@ namespace MultipleTextEditor
             ChangeToolStripMenuItemBackgroundColors();
         }
 
-        
+        private void 自動保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
