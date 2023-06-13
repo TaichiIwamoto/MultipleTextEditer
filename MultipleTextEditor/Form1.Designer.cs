@@ -44,15 +44,17 @@ namespace MultipleTextEditor
             this.イメージToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.カメラToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.フォントサイズToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.フォントToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.スタートアップToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.リストの型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.text_memo = new System.Windows.Forms.RichTextBox();
             this.自動保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.フォントサイズToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.text_memo = new System.Windows.Forms.RichTextBox();
+            this.autoSave = new System.Windows.Forms.Timer(this.components);
+            this.bullet = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -176,15 +178,12 @@ namespace MultipleTextEditor
             this.設定ToolStripMenuItem.Text = "設定";
             this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
             // 
-            
-            // 
             // フォントToolStripMenuItem
             // 
             this.フォントToolStripMenuItem.Name = "フォントToolStripMenuItem";
             this.フォントToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.フォントToolStripMenuItem.Text = "フォント";
             this.フォントToolStripMenuItem.Click += new System.EventHandler(this.フォントToolStripMenuItem_Click);
-
             // 
             // スタートアップToolStripMenuItem
             // 
@@ -198,6 +197,18 @@ namespace MultipleTextEditor
             this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.リストの型ToolStripMenuItem.Text = "リストの型";
             // 
+            // 自動保存ToolStripMenuItem
+            // 
+            this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
+            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.自動保存ToolStripMenuItem.Text = "自動保存";
+            this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
+            // 
+            // フォントサイズToolStripMenuItem
+            // 
+            this.フォントサイズToolStripMenuItem.Name = "フォントサイズToolStripMenuItem";
+            this.フォントサイズToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
             // text_memo
             // 
             this.text_memo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,18 +218,39 @@ namespace MultipleTextEditor
             this.text_memo.TabIndex = 2;
             this.text_memo.Text = "";
             // 
-            // 自動保存ToolStripMenuItem
+            // autoSave
             // 
-            this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
-            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.自動保存ToolStripMenuItem.Text = "自動保存";
-            this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
+            this.autoSave.Interval = 10000;
+            this.autoSave.Tick += new System.EventHandler(this.autoSave_Tick);
+            // 
+            // bullet
+            // 
+            this.bullet.Appearance = System.Windows.Forms.Appearance.Button;
+            this.bullet.Location = new System.Drawing.Point(399, 0);
+            this.bullet.Name = "bullet";
+            this.bullet.Size = new System.Drawing.Size(104, 24);
+            this.bullet.TabIndex = 3;
+            this.bullet.TabStop = true;
+            this.bullet.Text = "bullet";
+            this.bullet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bullet.UseVisualStyleBackColor = true;
+            this.bullet.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(633, 218);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.bullet);
             this.Controls.Add(this.text_memo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -226,6 +258,7 @@ namespace MultipleTextEditor
             this.Text = "多機能テキストエディタ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,8 +285,9 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem リストの型ToolStripMenuItem;
         private System.Windows.Forms.RichTextBox text_memo;
         private System.Windows.Forms.ToolStripMenuItem 自動保存ToolStripMenuItem;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer autoSave;
+        private System.Windows.Forms.RadioButton bullet;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
