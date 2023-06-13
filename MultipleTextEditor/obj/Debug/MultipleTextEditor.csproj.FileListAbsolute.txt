@@ -18,5 +18,4 @@ C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\De
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.CoreCompileInputs.cache
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.exe
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.pdb
-C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form3.resources
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form2.resources

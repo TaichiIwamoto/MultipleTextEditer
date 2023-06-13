@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 
+
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
@@ -36,8 +37,7 @@ namespace MultipleTextEditor
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool IsWindow(IntPtr hWnd);
         private string FileName = ""; //現在開いているファイル名
-        private Timer timer; //autoSavetimerのtimer
-
+        
 
         //MenuStripの背景色をデフォルトカラーに戻す関数
         private void ChangeToolStripMenuItemBackgroundColors()
@@ -64,6 +64,8 @@ namespace MultipleTextEditor
             //上書き保存を有効化
             FileName = dialog.FileName;
             上書き保存ToolStripMenuItem.Enabled = true;
+            autoSave.Enabled = true;
+
 
             //ウィンドウ名の変更
             Text = Path.GetFileName(FileName);
@@ -82,6 +84,8 @@ namespace MultipleTextEditor
             //上書き保存を有効化
             FileName = dialog.FileName;
             上書き保存ToolStripMenuItem.Enabled = true;
+            autoSave.Enabled = true;
+
 
             //ウィンドウ名の変更
             Text = Path.GetFileName(FileName);
@@ -106,8 +110,11 @@ namespace MultipleTextEditor
             text_memo.Text = "";
             Text = "無題 - メモ帳";
             上書き保存ToolStripMenuItem.Enabled = false;
+            autoSave.Enabled = false;
+
+
         }
-        
+
         private void ファイルToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
@@ -139,16 +146,31 @@ namespace MultipleTextEditor
             }
         }
 
+
+       
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            autoSaveDialog.Visible = false;
+            timer1.Enabled = false;
+        }
+
         private void autoSave_Tick(object sender, EventArgs e)
         {
             File.WriteAllText(FileName, text_memo.Text);
 
-            timer = new Timer();
-            timer.Interval = 3000; // 3秒
-            timer.Tick += Timer_Tick;
+          
+            autoSaveDialog.Visible = true;
+            timer1.Interval = 3000; // 3秒
+            timer1.Enabled = true;
 
-            timer.Start();
         }
+
+
+      
+
+
+
 
         private const int SRCCOPY = 13369376;
         private const int DWMWA_EXTENDED_FRAME_BOUNDS = 9;
@@ -163,100 +185,11 @@ namespace MultipleTextEditor
 
 
 
-        private void fullScreenCapture()
-        {
-            //アプリを透過させる
-            this.BackColor = Color.White;
-            this.TransparencyKey = Color.White;
-            //fullScreen.BackColor = Color.Transparent;
-            this.Opacity = 0;
+        
 
-            //プライマリスクリーン全体の大きさを取得
-            //Bitmap bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);    //null参照の可能性があるので
-            Bitmap bitmap_fullScreen = new Bitmap(Screen.PrimaryScreen?.Bounds.Width ?? 0, Screen.PrimaryScreen?.Bounds.Height ?? 0);
-            Graphics g = Graphics.FromImage(bitmap_fullScreen);
 
-            //画面を撮影
-            g.CopyFromScreen(new Point(0, 0), new Point(0, 0), bitmap_fullScreen.Size);
 
-            //解放
-            g.Dispose();
 
-            //透過解除
-            this.TransparencyKey = Color.Empty;
-            //fullScreen.BackColor = Color.White;
-            this.Opacity = 1.00;
-
-            //表示
-            pictureBox1.Image = bitmap_fullScreen;
-        }
-
-        private void activeWindowCaputure()
-        {
-            //アプリを最小化させる
-            this.WindowState = FormWindowState.Minimized;
-
-            Rect bounds, rect;
-
-            //アクティブウィンドウを取得
-            IntPtr hWnd = GetForegroundWindow();
-            IntPtr winDC = GetWindowDC(hWnd);
-            DwmGetWindowAttribute(hWnd, DWMWA_EXTENDED_FRAME_BOUNDS, out bounds, Marshal.SizeOf(typeof(Rect)));
-            GetWindowRect(hWnd, out rect);
-
-            var offsetX = bounds.left - rect.left;
-            var offsetY = bounds.top - rect.top;
-
-            //大きさを基に撮影
-            int width = bounds.right - bounds.left, hight = bounds.bottom - bounds.top;
-            //Console.WriteLine(width);
-            //Console.WriteLine(hight);
-            Bitmap bitmap_Window = new Bitmap(width, hight);
-            Graphics g = Graphics.FromImage(bitmap_Window);
-            IntPtr hDC = g.GetHdc();
-
-            BitBlt(hDC, 0, 0, bitmap_Window.Width, bitmap_Window.Height, winDC, offsetX, offsetY, SRCCOPY);
-            g.ReleaseHdc(hDC);
-            g.Dispose();
-            ReleaseDC(hWnd, winDC);
-
-            //アプリを元の大きさに復元する
-            this.WindowState = FormWindowState.Normal;
-
-            //表示
-            pictureBox1.Image = bitmap_Window;
-        }
-
-        private void customAreaCaputure(int x,int y, int width, int height)
-        {
-            //範囲指定(引数としてもらう)
-            x = 200;
-            y = 200;
-            width = 800;
-            height = 500;
-
-            //アプリを透過させる
-            this.BackColor = Color.White;
-            this.TransparencyKey = Color.White;
-            //fullScreen.BackColor = Color.Transparent;
-            this.Opacity = 0;
-
-            //指定範囲のキャプチャ
-            Rectangle rectangle = new Rectangle(x, y, width, height);
-            Bitmap bitmap_CA = new Bitmap(rectangle.Width, rectangle.Height);
-            Graphics g = Graphics.FromImage(bitmap_CA);
-            g.CopyFromScreen(new Point(rectangle.X, rectangle.Y), new Point(0, 0), bitmap_CA.Size);
-            g.Dispose();
-
-            //透過解除
-            this.TransparencyKey = Color.Empty;
-            //fullScreen.BackColor = Color.White;
-            this.Opacity = 1.00;
-
-            //表示
-            pictureBox1.Image = bitmap_CA;
-
-        }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -276,7 +209,8 @@ namespace MultipleTextEditor
 
         private void screenshot_CheckedChanged(object sender, EventArgs e)
         {
-            fullScreenCapture();
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
         private void image_CheckedChanged(object sender, EventArgs e)

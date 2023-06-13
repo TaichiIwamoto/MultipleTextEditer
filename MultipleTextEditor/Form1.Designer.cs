@@ -52,6 +52,7 @@ namespace MultipleTextEditor
             this.screenshot = new System.Windows.Forms.RadioButton();
             this.image = new System.Windows.Forms.RadioButton();
             this.autoSaveDialog = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,9 +170,9 @@ namespace MultipleTextEditor
             // text_memo
             // 
             this.text_memo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text_memo.Location = new System.Drawing.Point(0, 0);
+            this.text_memo.Location = new System.Drawing.Point(0, 24);
             this.text_memo.Name = "text_memo";
-            this.text_memo.Size = new System.Drawing.Size(800, 450);
+            this.text_memo.Size = new System.Drawing.Size(800, 426);
             this.text_memo.TabIndex = 2;
             this.text_memo.Text = "";
             // 
@@ -255,11 +256,17 @@ namespace MultipleTextEditor
             this.autoSaveDialog.Text = "Autosaved";
             this.autoSaveDialog.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.text_memo);
             this.Controls.Add(this.autoSaveDialog);
             this.Controls.Add(this.image);
             this.Controls.Add(this.screenshot);
@@ -267,7 +274,6 @@ namespace MultipleTextEditor
             this.Controls.Add(this.list);
             this.Controls.Add(this.bullet);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.text_memo);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "多機能テキストエディタ";
@@ -301,6 +307,7 @@ namespace MultipleTextEditor
         private System.Windows.Forms.RadioButton screenshot;
         private System.Windows.Forms.RadioButton image;
         private System.Windows.Forms.Label autoSaveDialog;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
