@@ -9,14 +9,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
-using MultipleTextEditor.Json;
+using MultipleTextEditor.PageSave;
 
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
-        
-
+     
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
@@ -41,13 +40,13 @@ namespace MultipleTextEditor
         }
         private void Page_Click(Object sender,EventArgs e)
         {
-            DataManager dm = new DataManager();
+            SaveData sd = new SaveData();
             string memo = "";
             string page = sender.ToString();
             page = page.Replace("Page", "");
             int ipage = int.Parse(page);
             memo = text_memo.Text;
-            dm.SaveData(ipage, memo);
+            sd.SavePage(ipage, memo);
 
 
             Console.WriteLine(memo);

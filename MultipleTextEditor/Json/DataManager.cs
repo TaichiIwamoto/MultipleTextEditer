@@ -10,7 +10,6 @@ namespace MultipleTextEditor.Json
 {
     class DataManager
     {
-        DataContractJsonSerializer serializer;
         [System.Runtime.Serialization.DataContract]
         public class SaveDataSubstance
         {
@@ -28,7 +27,7 @@ namespace MultipleTextEditor.Json
             };
 
             FileStream fs = new FileStream("SaveData.json", FileMode.Create);
-            serializer = new DataContractJsonSerializer(typeof(DataManager));
+            var serializer = new DataContractJsonSerializer(typeof(DataManager));
             serializer.WriteObject(fs, data);
         }
     }
