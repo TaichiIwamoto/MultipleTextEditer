@@ -162,10 +162,7 @@ namespace MultipleTextEditor
             this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
             // 
-            // フォントサイズToolStripMenuItem
-            // 
-            this.フォントサイズToolStripMenuItem.Name = "フォントサイズToolStripMenuItem";
-            this.フォントサイズToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            
             // 
             // text_memo
             // 
