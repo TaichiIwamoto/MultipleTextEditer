@@ -140,26 +140,26 @@ namespace MultipleTextEditor
             // FontToolStripMenuItem
             // 
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
-            this.FontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.FontToolStripMenuItem.Text = "フォント";
             this.FontToolStripMenuItem.Click += new System.EventHandler(this.FontToolStripMenuItem_Click);
             // 
             // スタートアップToolStripMenuItem
             // 
             this.スタートアップToolStripMenuItem.Name = "スタートアップToolStripMenuItem";
-            this.スタートアップToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.スタートアップToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.スタートアップToolStripMenuItem.Text = "スタートアップ";
             // 
             // リストの型ToolStripMenuItem
             // 
             this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
-            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.リストの型ToolStripMenuItem.Text = "リストの型";
             // 
             // 自動保存ToolStripMenuItem
             // 
             this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
-            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
             // 
             // フォントサイズToolStripMenuItem
