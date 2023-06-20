@@ -19,3 +19,14 @@ C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\De
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.exe
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.pdb
 C:\Users\manat\OneDrive\ドキュメント\GitHub\Main\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form2.resources
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\bin\Debug\MultipleTextEditor.exe.config
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\bin\Debug\MultipleTextEditor.exe
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\bin\Debug\MultipleTextEditor.pdb
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.AssemblyReference.cache
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form1.resources
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.Form2.resources
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.Properties.Resources.resources
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.GenerateResource.cache
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.csproj.CoreCompileInputs.cache
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.exe
+C:\Users\taich\OneDrive - 芝浦工業大学 教研テナント (SIC)\C#\MultipleTExtEditerSystem\MultipleTextEditor\obj\Debug\MultipleTextEditor.pdb

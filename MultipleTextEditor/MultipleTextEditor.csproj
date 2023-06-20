@@ -58,6 +58,27 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function\Form1.List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.OverWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.Exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.Save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Form1.Open.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
