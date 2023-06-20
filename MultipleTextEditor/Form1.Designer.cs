@@ -40,10 +40,9 @@ namespace MultipleTextEditor
             this.PageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.スタートアップToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.リストの型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自動保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.フォントサイズToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.text_memo = new System.Windows.Forms.RichTextBox();
             this.autoSave = new System.Windows.Forms.Timer(this.components);
             this.bullet = new System.Windows.Forms.RadioButton();
@@ -129,7 +128,7 @@ namespace MultipleTextEditor
             // 
             this.ConfigToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FontToolStripMenuItem,
-            this.スタートアップToolStripMenuItem,
+            this.StartupToolStripMenuItem,
             this.リストの型ToolStripMenuItem,
             this.自動保存ToolStripMenuItem});
             this.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem";
@@ -146,9 +145,9 @@ namespace MultipleTextEditor
             // 
             // スタートアップToolStripMenuItem
             // 
-            this.スタートアップToolStripMenuItem.Name = "スタートアップToolStripMenuItem";
-            this.スタートアップToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.スタートアップToolStripMenuItem.Text = "スタートアップ";
+            this.StartupToolStripMenuItem.Name = "スタートアップToolStripMenuItem";
+            this.StartupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.StartupToolStripMenuItem.Text = "スタートアップ";
             // 
             // リストの型ToolStripMenuItem
             // 
@@ -161,11 +160,6 @@ namespace MultipleTextEditor
             this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
             this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
-            // 
-            // フォントサイズToolStripMenuItem
-            // 
-            this.フォントサイズToolStripMenuItem.Name = "フォントサイズToolStripMenuItem";
-            this.フォントサイズToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
             // text_memo
             // 
@@ -294,9 +288,8 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ConfigToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem フォントサイズToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FontToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem スタートアップToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem StartupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem リストの型ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 自動保存ToolStripMenuItem;
         private System.Windows.Forms.Timer autoSave;
