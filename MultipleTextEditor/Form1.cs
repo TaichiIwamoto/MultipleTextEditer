@@ -96,11 +96,7 @@ namespace MultipleTextEditor
         }
 
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            //箇条書き機能の有効化
-            text_memo.SelectionBullet = true;
-        }
+        
         private void memo_CheckedChanged(object sender, EventArgs e)
         {
             text_memo.SelectionBullet = false;
@@ -117,6 +113,5 @@ namespace MultipleTextEditor
 
         }
 
-        
     }
 }
