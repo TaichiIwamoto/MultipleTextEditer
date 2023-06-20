@@ -50,6 +50,17 @@ namespace MultipleTextEditor
         public Form1()
         {
             InitializeComponent();
+            // スタートアップのキーを取得
+            RegistryKey startupKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            // アプリケーションの実行ファイルのパスを取得
+            string appPath = Application.ExecutablePath;
+
+            // スタートアップに登録されているかチェック
+            bool isStartupEnabled = startupKey.GetValue("MultipleTextEditor") != null;
+
+            // メニュー項目のチェック状態を設定
+            startupToolStripMenuItem.Checked = isStartupEnabled;
         }
         private void FileToolStripMenuItem_Click(object sender, EventArgs e)
         {
