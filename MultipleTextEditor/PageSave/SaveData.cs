@@ -24,6 +24,7 @@ namespace MultipleTextEditor.PageSave
             sw.Close();
         }
 
+        /*
         public String LoadPage(int page)
         {
             StreamReader sr = new StreamReader("resources/PageData.txt");
@@ -34,5 +35,6 @@ namespace MultipleTextEditor.PageSave
             }
 
         }
+        */
     }
 }
