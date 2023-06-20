@@ -74,17 +74,17 @@ namespace MultipleTextEditor
             return new Rectangle(
                 Math.Min(startPosition.X, currentPosition.X),
                 Math.Min(startPosition.Y, currentPosition.Y),
-                Math.Abs(startPosition.X - currentPosition.X),
-                Math.Abs(startPosition.Y - currentPosition.Y));
+                Math.Abs((startPosition.X - currentPosition.X)),
+                Math.Abs((startPosition.Y - currentPosition.Y)));
         }
 
         public Rectangle DrawRectangle()     //マウスで指定した範囲を返す
         {
             return new Rectangle(
-                Math.Min(startPosition.X - canvasStartPosition.X, currentPosition.X - canvasStartPosition.X),
-                Math.Min(startPosition.Y - canvasStartPosition.Y, currentPosition.Y - canvasStartPosition.Y),
-                Math.Abs(startPosition.X - currentPosition.X),
-                Math.Abs(startPosition.Y - currentPosition.Y));
+                (int)Math.Min((startPosition.X - canvasStartPosition.X), (currentPosition.X - canvasStartPosition.X)),
+                (int)Math.Min((startPosition.Y - canvasStartPosition.Y), (currentPosition.Y - canvasStartPosition.Y)),
+                (int)Math.Abs((startPosition.X - currentPosition.X)),
+                (int)Math.Abs((startPosition.Y - currentPosition.Y)));
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)

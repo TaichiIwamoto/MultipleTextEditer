@@ -177,13 +177,13 @@ namespace MultipleTextEditor
             //プライマリスクリーン全体の大きさを取得
             //Bitmap bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);    //null参照の可能性があるので
             Bitmap bitmap_fullScreen = new Bitmap(Screen.PrimaryScreen?.Bounds.Width ?? 0, Screen.PrimaryScreen?.Bounds.Height ?? 0);
-            Graphics g = Graphics.FromImage(bitmap_fullScreen);
+            Graphics g_full = Graphics.FromImage(bitmap_fullScreen);
 
             //画面を撮影
-            g.CopyFromScreen(new Point(0, 0), new Point(0, 0), bitmap_fullScreen.Size);
+            g_full.CopyFromScreen(new Point(0, 0), new Point(0, 0), bitmap_fullScreen.Size);
 
             //解放
-            g.Dispose();
+            g_full.Dispose();
 
             //透過解除
             this.TransparencyKey = Color.Empty;
@@ -219,12 +219,12 @@ namespace MultipleTextEditor
             //Console.WriteLine(width);
             //Console.WriteLine(hight);
             Bitmap bitmap_Window = new Bitmap(width, hight);
-            Graphics g = Graphics.FromImage(bitmap_Window);
-            IntPtr hDC = g.GetHdc();
+            Graphics g_active = Graphics.FromImage(bitmap_Window);
+            IntPtr hDC = g_active.GetHdc();
 
             BitBlt(hDC, 0, 0, bitmap_Window.Width, bitmap_Window.Height, winDC, offsetX, offsetY, SRCCOPY);
-            g.ReleaseHdc(hDC);
-            g.Dispose();
+            g_active.ReleaseHdc(hDC);
+            g_active.Dispose();
             ReleaseDC(hWnd, winDC);
 
             //アプリを元の大きさに復元する

@@ -46,10 +46,11 @@ namespace MultipleTextEditor
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(204, 366);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 54);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1276, 510);
+            this.pictureBox1.Size = new System.Drawing.Size(1464, 831);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -62,7 +63,7 @@ namespace MultipleTextEditor
             this.保存ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1733, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1733, 40);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,9 +107,9 @@ namespace MultipleTextEditor
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1490, 366);
+            this.listView1.Location = new System.Drawing.Point(1490, 54);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(181, 510);
+            this.listView1.Size = new System.Drawing.Size(231, 834);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -138,7 +139,7 @@ namespace MultipleTextEditor
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "ScreenCapture";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
