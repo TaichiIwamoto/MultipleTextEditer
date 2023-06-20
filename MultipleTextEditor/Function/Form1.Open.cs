@@ -28,6 +28,8 @@ namespace MultipleTextEditor
             FileName = dialog.FileName;
             OverWriteToolStripMenuItem.Enabled = true;
             autoSave.Enabled = true;
+            isOverWrite = true;
+            自動保存ToolStripMenuItem.Checked = true;
 
 
             //ウィンドウ名の変更

@@ -15,15 +15,10 @@ namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
-        private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            text_memo.Text = "";
-            Text = "無題 - メモ帳";
-            OverWriteToolStripMenuItem.Enabled = false;
-            autoSave.Enabled = false;
-
-            isOverWrite = false;
-            自動保存ToolStripMenuItem.Checked = false;
+            //箇条書き機能の有効化
+            text_memo.SelectionBullet = true;
         }
     }
 }

@@ -85,14 +85,14 @@ namespace MultipleTextEditor
             // CreateToolStripMenuItem
             // 
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
-            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CreateToolStripMenuItem.Text = "新規";
             this.CreateToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -100,21 +100,21 @@ namespace MultipleTextEditor
             // 
             this.OverWriteToolStripMenuItem.Enabled = false;
             this.OverWriteToolStripMenuItem.Name = "OverWriteToolStripMenuItem";
-            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OverWriteToolStripMenuItem.Text = "上書き保存";
             this.OverWriteToolStripMenuItem.Click += new System.EventHandler(this.OverWriteToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaveToolStripMenuItem.Text = "名前を付けて保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ExitToolStripMenuItem.Text = "終了";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -161,6 +161,7 @@ namespace MultipleTextEditor
             this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
             this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
+            this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
             // 
             // フォントサイズToolStripMenuItem
             // 
