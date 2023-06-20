@@ -73,6 +73,9 @@
     <Compile Include="Function\Form1.Bullet.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Function\Form1.Font.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Function\Form1.List.cs">
       <SubType>Form</SubType>
     </Compile>
