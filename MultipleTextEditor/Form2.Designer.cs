@@ -29,72 +29,135 @@ namespace MultipleTextEditor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.fullScreen = new System.Windows.Forms.Button();
-            this.activeWindow = new System.Windows.Forms.Button();
-            this.customArea = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.全画面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.アクティブウィンドウToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.選択範囲ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(94, 183);
+            this.pictureBox1.Location = new System.Drawing.Point(204, 366);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(589, 255);
+            this.pictureBox1.Size = new System.Drawing.Size(1276, 510);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // fullScreen
+            // menuStrip1
             // 
-            this.fullScreen.Location = new System.Drawing.Point(125, 92);
-            this.fullScreen.Name = "fullScreen";
-            this.fullScreen.Size = new System.Drawing.Size(75, 23);
-            this.fullScreen.TabIndex = 6;
-            this.fullScreen.Text = "full";
-            this.fullScreen.UseVisualStyleBackColor = true;
-            this.fullScreen.Click += new System.EventHandler(this.fullScreen_Click);
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.保存ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1733, 48);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // activeWindow
+            // toolStripMenuItem1
             // 
-            this.activeWindow.Location = new System.Drawing.Point(344, 92);
-            this.activeWindow.Name = "activeWindow";
-            this.activeWindow.Size = new System.Drawing.Size(75, 23);
-            this.activeWindow.TabIndex = 7;
-            this.activeWindow.Text = "window";
-            this.activeWindow.UseVisualStyleBackColor = true;
-            this.activeWindow.Click += new System.EventHandler(this.activeWindow_Click);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.全画面ToolStripMenuItem,
+            this.アクティブウィンドウToolStripMenuItem,
+            this.選択範囲ToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(83, 38);
+            this.toolStripMenuItem1.Text = "撮影";
             // 
-            // customArea
+            // 全画面ToolStripMenuItem
             // 
-            this.customArea.Location = new System.Drawing.Point(559, 92);
-            this.customArea.Name = "customArea";
-            this.customArea.Size = new System.Drawing.Size(75, 23);
-            this.customArea.TabIndex = 8;
-            this.customArea.Text = "Area";
-            this.customArea.UseVisualStyleBackColor = true;
-            this.customArea.Click += new System.EventHandler(this.customArea_Click);
+            this.全画面ToolStripMenuItem.Name = "全画面ToolStripMenuItem";
+            this.全画面ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.全画面ToolStripMenuItem.Text = "全画面";
+            this.全画面ToolStripMenuItem.Click += new System.EventHandler(this.全画面ToolStripMenuItem_Click);
+            // 
+            // アクティブウィンドウToolStripMenuItem
+            // 
+            this.アクティブウィンドウToolStripMenuItem.Name = "アクティブウィンドウToolStripMenuItem";
+            this.アクティブウィンドウToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.アクティブウィンドウToolStripMenuItem.Text = "アクティブウィンドウ";
+            this.アクティブウィンドウToolStripMenuItem.Click += new System.EventHandler(this.アクティブウィンドウToolStripMenuItem_Click);
+            // 
+            // 選択範囲ToolStripMenuItem
+            // 
+            this.選択範囲ToolStripMenuItem.Name = "選択範囲ToolStripMenuItem";
+            this.選択範囲ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.選択範囲ToolStripMenuItem.Text = "選択範囲";
+            this.選択範囲ToolStripMenuItem.Click += new System.EventHandler(this.選択範囲ToolStripMenuItem_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(1490, 366);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(181, 510);
+            this.listView1.TabIndex = 10;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.名前を付けて保存ToolStripMenuItem});
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(83, 38);
+            this.保存ToolStripMenuItem.Text = "保存";
+            // 
+            // 名前を付けて保存ToolStripMenuItem
+            // 
+            this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存";
+            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1733, 900);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.customArea);
-            this.Controls.Add(this.activeWindow);
-            this.Controls.Add(this.fullScreen);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button fullScreen;
-        private System.Windows.Forms.Button activeWindow;
-        private System.Windows.Forms.Button customArea;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 全画面ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem アクティブウィンドウToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 選択範囲ToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem;
     }
 }
