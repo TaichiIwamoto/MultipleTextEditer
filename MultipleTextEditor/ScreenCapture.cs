@@ -11,6 +11,7 @@ namespace MultipleTextEditor
     class ScreenCapture
     {
         private Rectangle canvasBounds = Screen.GetBounds(Point.Empty);
+        private int minArea = 1000;     //この値を変更すると選択範囲の許容最小面積を変更することができる
 
         public ScreenCapture()
         {
@@ -19,6 +20,10 @@ namespace MultipleTextEditor
 
         public Bitmap GetSnapShot()
         {
+            while (canvasBounds.Width * canvasBounds.Height <= minArea)
+            {
+                SetCanvas();
+            }
             using (Image image = new Bitmap(canvasBounds.Width, canvasBounds.Height))
             {
                 using (Graphics graphics = Graphics.FromImage(image))
