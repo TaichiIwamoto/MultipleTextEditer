@@ -146,7 +146,7 @@ namespace MultipleTextEditor
             // FontToolStripMenuItem
             // 
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
-            this.FontToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
             this.FontToolStripMenuItem.Text = "フォント";
             this.FontToolStripMenuItem.Click += new System.EventHandler(this.FontToolStripMenuItem_Click);
             // 
@@ -156,14 +156,14 @@ namespace MultipleTextEditor
             this.toolStripSeparator1,
             this.toolStripComboBox1});
             this.StartupToolStripMenuItem.Name = "StartupToolStripMenuItem";
-            this.StartupToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.StartupToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
             this.StartupToolStripMenuItem.Text = "スタートアップ";
             this.StartupToolStripMenuItem.Click += new System.EventHandler(this.StartupToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
             // 
             // toolStripComboBox1
             // 
@@ -177,13 +177,13 @@ namespace MultipleTextEditor
             // リストの型ToolStripMenuItem
             // 
             this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
-            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
             this.リストの型ToolStripMenuItem.Text = "リストの型";
             // 
             // 自動保存ToolStripMenuItem
             // 
             this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
-            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
             this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
             // 
@@ -196,6 +196,8 @@ namespace MultipleTextEditor
             this.text_memo.Size = new System.Drawing.Size(1333, 640);
             this.text_memo.TabIndex = 2;
             this.text_memo.Text = "";
+            this.text_memo.TextChanged += new System.EventHandler(this.text_memo_TextChanged);
+            this.text_memo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_memo_KeyDown);
             // 
             // autoSave
             // 
