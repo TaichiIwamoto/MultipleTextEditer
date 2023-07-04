@@ -15,16 +15,33 @@ namespace MultipleTextEditor.PageSave
 
             StreamReader sr = new StreamReader(path + "/PageData.txt");
 
+            int count = 2;
+            string line = sr.ReadLine();
             while (sr.Peek() != -1)
             {
-                String line = sr.ReadLine();
                 string[] tmp = line.Split(' ');
-                lp.Add((int.Parse(tmp[0])), tmp[1]);               
+                
+                string tmpLine = tmp[1];
+                while (!tmpLine.Contains("\n"))
+                {
+                    tmpLine = sr.ReadLine();
+                    string nextNum = tmpLine.Substring(0, 1);
+                    if (nextNum.Equals(count.ToString()))
+                    {
+                        Console.WriteLine("exit");
+                        count += 1;
+                        line = tmpLine;
+                        break;
+                    }
+                    else
+                    {
+                        tmp[1] += "\n"+tmpLine;
+                        Console.WriteLine(tmp[1]);
+                    }
+                }
+                lp.Add((int.Parse(tmp[0])), tmp[1]);
+
             }
-/*            foreach (var entry in lp)
-            {
-                Console.WriteLine(entry.Key + " " + entry.Value);
-            }*/
             sr.Close();
             return lp;
 
