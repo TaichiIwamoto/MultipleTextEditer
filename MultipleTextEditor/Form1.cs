@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection.Emit;
 
 namespace MultipleTextEditor
 {
@@ -116,5 +118,6 @@ namespace MultipleTextEditor
         private void PageNum_Click(object sender, EventArgs e)
         {
         }
+
     }
 }
