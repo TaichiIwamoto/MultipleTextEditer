@@ -182,8 +182,6 @@ namespace MultipleTextEditor
             text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
         }
     }
-
-
 }
 
 

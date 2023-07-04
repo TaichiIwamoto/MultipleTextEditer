@@ -23,7 +23,6 @@ namespace MultipleTextEditor
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
-            PageToolStripMenuItem.BackColor = Color.Gray;
             int page = 1;
 
             if (PageToolStripMenuItem.DropDownItems.Count == 0)
@@ -46,6 +45,7 @@ namespace MultipleTextEditor
         private void Page_Click(Object sender,EventArgs e)
         {
 
+
             SaveData sd = new SaveData();
             string memo;
             string page = sender.ToString();
@@ -55,21 +55,26 @@ namespace MultipleTextEditor
             currentPageNum = ipage;
 
             memo = text_memo.Text;
-            try
+            if (pageOpen != true)
             {
-                if (pageData.ContainsKey(prePageNum) && text_memo.Text != "")
+                try
                 {
-                    pageData.Remove(prePageNum);
+                    if (pageData.ContainsKey(prePageNum) && text_memo.Text != "")
+                    {
+                        pageData.Remove(prePageNum);
+                    }
+                    pageData.Add(prePageNum, memo);
                 }
-            pageData.Add(prePageNum, memo);
-            prePageNum = ipage;
-            }
-            catch (ArgumentException)
-            {
-                prePageNum = ipage;
-            }   
+                catch (ArgumentException)
+                {
+                    prePageNum = ipage;
+                }
 
-            sd.SavePage(ipage, memo,path,pageData);
+                sd.SavePage(ipage, memo, path, pageData);
+            }
+            pageOpen = false;
+            prePageNum = ipage;
+
             //Console.WriteLine("Save Start");
             if (pageData.ContainsKey(ipage))
             {

@@ -32,7 +32,6 @@ namespace MultipleTextEditor.PageSave
                 }
                 sw.Close();
             }
-
         }
     }
 }
