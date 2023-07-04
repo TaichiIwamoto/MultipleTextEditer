@@ -59,6 +59,7 @@ namespace MultipleTextEditor
                     Console.WriteLine("Page Added");
                 }
                 PageToolStripMenuItem.DropDownItems.Add("新規ページ", null, NewPage_Click);
+                pageOpen = true;
             }
         }
     }
