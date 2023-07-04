@@ -100,7 +100,6 @@
     <Compile Include="Function\Form1.Open.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Json\DataManager.cs" />
     <Compile Include="PageSave\LoadData.cs" />
     <Compile Include="PageSave\SaveData.cs" />
     <Compile Include="Program.cs" />
@@ -134,9 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="resources\PageData.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

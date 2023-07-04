@@ -26,14 +26,12 @@ namespace MultipleTextEditor
             dialog.Title = "開く";
             if (dialog.ShowDialog() == DialogResult.OK)
                 text_memo.Text = File.ReadAllText(dialog.FileName);
-
             //上書き保存を有効化
             FileName = dialog.FileName;
             OverWriteToolStripMenuItem.Enabled = true;
             autoSave.Enabled = true;
             isOverWrite = true;
             自動保存ToolStripMenuItem.Checked = true;
-
 
             //ウィンドウ名の変更
             Text = Path.GetFileName(FileName);
@@ -58,12 +56,6 @@ namespace MultipleTextEditor
                 Console.WriteLine("Page Added");
             }
             PageToolStripMenuItem.DropDownItems.Add("新規ページ", null, NewPage_Click);
-
-
-
-
         }
-
-
     }
 }
