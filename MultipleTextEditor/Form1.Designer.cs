@@ -45,7 +45,7 @@ namespace MultipleTextEditor
             this.StartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.リストの型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        
             this.自動保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.text_memo = new System.Windows.Forms.RichTextBox();
             this.autoSave = new System.Windows.Forms.Timer(this.components);
@@ -154,7 +154,7 @@ namespace MultipleTextEditor
             this.ConfigToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FontToolStripMenuItem,
             this.StartupToolStripMenuItem,
-            this.リストの型ToolStripMenuItem,
+          
             this.自動保存ToolStripMenuItem});
             this.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem";
 
@@ -197,11 +197,7 @@ namespace MultipleTextEditor
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 33);
             this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click_1);
             // 
-            // リストの型ToolStripMenuItem
-            // 
-            this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
-            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.リストの型ToolStripMenuItem.Text = "リストの型";
+           
             // 
             // 自動保存ToolStripMenuItem
             // 
@@ -370,7 +366,7 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem ConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StartupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem リストの型ToolStripMenuItem;
+       
         private System.Windows.Forms.ToolStripMenuItem 自動保存ToolStripMenuItem;
         private System.Windows.Forms.Timer autoSave;
         private System.Windows.Forms.RadioButton bullet;
