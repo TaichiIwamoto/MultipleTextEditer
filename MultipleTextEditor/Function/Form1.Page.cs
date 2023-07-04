@@ -23,7 +23,6 @@ namespace MultipleTextEditor
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
-            PageToolStripMenuItem.BackColor = Color.Gray;
             int page = 1;
 
             if (PageToolStripMenuItem.DropDownItems.Count == 0)
