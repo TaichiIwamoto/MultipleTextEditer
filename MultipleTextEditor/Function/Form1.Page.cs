@@ -15,7 +15,11 @@ namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
-     
+
+        
+        private int prePageNum = 1;
+        private int currentPageNum;
+        private string page = "page1";
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
@@ -24,10 +28,11 @@ namespace MultipleTextEditor
 
             if (PageToolStripMenuItem.DropDownItems.Count == 0)
             {  
-                ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                tsmi.Text = String.Concat("Page",page.ToString());
-                PageToolStripMenuItem.DropDownItems.Add(tsmi.Text,null,Page_Click);
-                PageToolStripMenuItem.DropDownItems.Add("新規ページ",null,NewPage_Click);
+  
+             ToolStripMenuItem tsmi = new ToolStripMenuItem();
+             tsmi.Text = String.Concat("Page",page.ToString());
+             PageToolStripMenuItem.DropDownItems.Add(tsmi.Text,null,Page_Click);
+             PageToolStripMenuItem.DropDownItems.Add("新規ページ",null,NewPage_Click);
             }
         }
         private void NewPage_Click(object sender,EventArgs e)
@@ -40,16 +45,41 @@ namespace MultipleTextEditor
         }
         private void Page_Click(Object sender,EventArgs e)
         {
+
             SaveData sd = new SaveData();
-            string memo = "";
+            string memo;
             string page = sender.ToString();
+            PageNum.Text = page;
             page = page.Replace("Page", "");
             int ipage = int.Parse(page);
+            currentPageNum = ipage;
+
             memo = text_memo.Text;
-            sd.SavePage(ipage, memo);
+            try
+            {
+                if (pageData.ContainsKey(prePageNum) && text_memo.Text != "")
+                {
+                    pageData.Remove(prePageNum);
+                }
+            pageData.Add(prePageNum, memo);
+            prePageNum = ipage;
+            }
+            catch (ArgumentException)
+            {
+                prePageNum = ipage;
+            }   
 
+            sd.SavePage(ipage, memo,path,pageData);
+            //Console.WriteLine("Save Start");
+            if (pageData.ContainsKey(ipage))
+            {
+                text_memo.Text = pageData[ipage];
+            }
+            else
+            {
+            text_memo.Text = "";
 
-            Console.WriteLine(memo);
+            }
         }
     }
 }

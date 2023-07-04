@@ -52,19 +52,23 @@ namespace MultipleTextEditor
             this.image = new System.Windows.Forms.RadioButton();
             this.autoSaveDialog = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PageNum = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.PageToolStripMenuItem,
             this.ConfigToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(1467, 42);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,21 +81,21 @@ namespace MultipleTextEditor
             this.SaveToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(90, 34);
             this.FileToolStripMenuItem.Text = "ファイル";
             this.FileToolStripMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
             // CreateToolStripMenuItem
             // 
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
-            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
             this.CreateToolStripMenuItem.Text = "新規";
             this.CreateToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -99,28 +103,28 @@ namespace MultipleTextEditor
             // 
             this.OverWriteToolStripMenuItem.Enabled = false;
             this.OverWriteToolStripMenuItem.Name = "OverWriteToolStripMenuItem";
-            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
             this.OverWriteToolStripMenuItem.Text = "上書き保存";
             this.OverWriteToolStripMenuItem.Click += new System.EventHandler(this.OverWriteToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
             this.SaveToolStripMenuItem.Text = "名前を付けて保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
             this.ExitToolStripMenuItem.Text = "終了";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // PageToolStripMenuItem
             // 
             this.PageToolStripMenuItem.Name = "PageToolStripMenuItem";
-            this.PageToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.PageToolStripMenuItem.Size = new System.Drawing.Size(79, 34);
             this.PageToolStripMenuItem.Text = "ページ";
             this.PageToolStripMenuItem.Click += new System.EventHandler(this.PageToolStripMenuItem_Click);
             // 
@@ -132,42 +136,43 @@ namespace MultipleTextEditor
             this.リストの型ToolStripMenuItem,
             this.自動保存ToolStripMenuItem});
             this.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem";
-            this.ConfigToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.ConfigToolStripMenuItem.Size = new System.Drawing.Size(73, 34);
             this.ConfigToolStripMenuItem.Text = "設定";
             this.ConfigToolStripMenuItem.Click += new System.EventHandler(this.ConfigToolStripMenuItem_Click);
             // 
             // FontToolStripMenuItem
             // 
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
-            this.FontToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(237, 40);
             this.FontToolStripMenuItem.Text = "フォント";
             this.FontToolStripMenuItem.Click += new System.EventHandler(this.FontToolStripMenuItem_Click);
             // 
-            // スタートアップToolStripMenuItem
+            // StartupToolStripMenuItem
             // 
-            this.StartupToolStripMenuItem.Name = "スタートアップToolStripMenuItem";
-            this.StartupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.StartupToolStripMenuItem.Name = "StartupToolStripMenuItem";
+            this.StartupToolStripMenuItem.Size = new System.Drawing.Size(237, 40);
             this.StartupToolStripMenuItem.Text = "スタートアップ";
             // 
             // リストの型ToolStripMenuItem
             // 
             this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
-            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(237, 40);
             this.リストの型ToolStripMenuItem.Text = "リストの型";
             // 
             // 自動保存ToolStripMenuItem
             // 
             this.自動保存ToolStripMenuItem.Name = "自動保存ToolStripMenuItem";
-            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.自動保存ToolStripMenuItem.Size = new System.Drawing.Size(237, 40);
             this.自動保存ToolStripMenuItem.Text = "自動保存";
             this.自動保存ToolStripMenuItem.Click += new System.EventHandler(this.自動保存ToolStripMenuItem_Click);
             // 
             // text_memo
             // 
             this.text_memo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text_memo.Location = new System.Drawing.Point(0, 24);
+            this.text_memo.Location = new System.Drawing.Point(0, 42);
+            this.text_memo.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.text_memo.Name = "text_memo";
-            this.text_memo.Size = new System.Drawing.Size(800, 426);
+            this.text_memo.Size = new System.Drawing.Size(1467, 746);
             this.text_memo.TabIndex = 2;
             this.text_memo.Text = "";
             // 
@@ -179,9 +184,10 @@ namespace MultipleTextEditor
             // bullet
             // 
             this.bullet.Appearance = System.Windows.Forms.Appearance.Button;
-            this.bullet.Location = new System.Drawing.Point(148, 0);
+            this.bullet.Location = new System.Drawing.Point(271, 0);
+            this.bullet.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bullet.Name = "bullet";
-            this.bullet.Size = new System.Drawing.Size(70, 24);
+            this.bullet.Size = new System.Drawing.Size(128, 42);
             this.bullet.TabIndex = 3;
             this.bullet.TabStop = true;
             this.bullet.Text = "バレット";
@@ -192,9 +198,10 @@ namespace MultipleTextEditor
             // list
             // 
             this.list.Appearance = System.Windows.Forms.Appearance.Button;
-            this.list.Location = new System.Drawing.Point(224, 0);
+            this.list.Location = new System.Drawing.Point(411, 0);
+            this.list.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(70, 24);
+            this.list.Size = new System.Drawing.Size(128, 42);
             this.list.TabIndex = 5;
             this.list.TabStop = true;
             this.list.Text = "リスト";
@@ -205,9 +212,10 @@ namespace MultipleTextEditor
             // memo
             // 
             this.memo.Appearance = System.Windows.Forms.Appearance.Button;
-            this.memo.Location = new System.Drawing.Point(300, 0);
+            this.memo.Location = new System.Drawing.Point(550, 0);
+            this.memo.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.memo.Name = "memo";
-            this.memo.Size = new System.Drawing.Size(70, 24);
+            this.memo.Size = new System.Drawing.Size(128, 42);
             this.memo.TabIndex = 6;
             this.memo.TabStop = true;
             this.memo.Text = "メモ";
@@ -218,9 +226,10 @@ namespace MultipleTextEditor
             // screenshot
             // 
             this.screenshot.Appearance = System.Windows.Forms.Appearance.Button;
-            this.screenshot.Location = new System.Drawing.Point(376, 0);
+            this.screenshot.Location = new System.Drawing.Point(689, 0);
+            this.screenshot.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.screenshot.Name = "screenshot";
-            this.screenshot.Size = new System.Drawing.Size(70, 24);
+            this.screenshot.Size = new System.Drawing.Size(128, 42);
             this.screenshot.TabIndex = 7;
             this.screenshot.TabStop = true;
             this.screenshot.Text = "スクショ";
@@ -231,9 +240,10 @@ namespace MultipleTextEditor
             // image
             // 
             this.image.Appearance = System.Windows.Forms.Appearance.Button;
-            this.image.Location = new System.Drawing.Point(452, 0);
+            this.image.Location = new System.Drawing.Point(829, 0);
+            this.image.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(70, 24);
+            this.image.Size = new System.Drawing.Size(128, 42);
             this.image.TabIndex = 8;
             this.image.TabStop = true;
             this.image.Text = "イメージ";
@@ -244,9 +254,10 @@ namespace MultipleTextEditor
             // autoSaveDialog
             // 
             this.autoSaveDialog.AutoSize = true;
-            this.autoSaveDialog.Location = new System.Drawing.Point(743, 0);
+            this.autoSaveDialog.Location = new System.Drawing.Point(1362, 0);
+            this.autoSaveDialog.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.autoSaveDialog.Name = "autoSaveDialog";
-            this.autoSaveDialog.Size = new System.Drawing.Size(59, 12);
+            this.autoSaveDialog.Size = new System.Drawing.Size(103, 21);
             this.autoSaveDialog.TabIndex = 9;
             this.autoSaveDialog.Text = "Autosaved";
             this.autoSaveDialog.Visible = false;
@@ -256,11 +267,23 @@ namespace MultipleTextEditor
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // PageNum
+            // 
+            this.PageNum.AutoSize = true;
+            this.PageNum.Enabled = false;
+            this.PageNum.Location = new System.Drawing.Point(1405, 21);
+            this.PageNum.Name = "PageNum";
+            this.PageNum.Size = new System.Drawing.Size(65, 21);
+            this.PageNum.TabIndex = 10;
+            this.PageNum.Text = "Page1";
+            this.PageNum.Click += new System.EventHandler(this.PageNum_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1467, 788);
+            this.Controls.Add(this.PageNum);
             this.Controls.Add(this.text_memo);
             this.Controls.Add(this.autoSaveDialog);
             this.Controls.Add(this.image);
@@ -270,6 +293,7 @@ namespace MultipleTextEditor
             this.Controls.Add(this.bullet);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.Text = "多機能テキストエディタ";
             this.menuStrip1.ResumeLayout(false);
@@ -302,6 +326,7 @@ namespace MultipleTextEditor
         private System.Windows.Forms.Label autoSaveDialog;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.RichTextBox text_memo;
+        private System.Windows.Forms.Label PageNum;
     }
 }
 
