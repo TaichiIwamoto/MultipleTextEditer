@@ -101,6 +101,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Json\DataManager.cs" />
+    <Compile Include="PageSave\LoadData.cs" />
     <Compile Include="PageSave\SaveData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\PageData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

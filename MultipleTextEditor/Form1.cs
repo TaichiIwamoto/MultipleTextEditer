@@ -115,6 +115,9 @@ namespace MultipleTextEditor
 
         }
 
-        
+        private void PageNum_Click(object sender, EventArgs e)
+        {
+        }
+
     }
 }

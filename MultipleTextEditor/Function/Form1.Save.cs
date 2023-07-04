@@ -9,15 +9,18 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+using MultipleTextEditor.PageSave;
 
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
+        public string path;
+        
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "テキストファイル(*.txt)|*.txt";
+            dialog.Filter = "多機能エディタファイル(*.mte)|*.mte";
             dialog.Title = "保存";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -34,6 +37,16 @@ namespace MultipleTextEditor
 
             //ウィンドウ名の変更
             Text = Path.GetFileName(FileName);
+            string saveName = Text.Replace(".mte", "");
+            path = "Data/"+ saveName;
+
+            if (!System.IO.Directory.Exists(path))
+            {
+                Console.WriteLine("make a directory");
+                Directory.CreateDirectory(path);
+                File.Create(path + "/PageData.txt");
+                Console.WriteLine(currentPageNum.ToString(), text_memo);                
+            }
         }
     }
 }

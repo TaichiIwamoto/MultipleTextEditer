@@ -5,36 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+using MultipleTextEditor;
 
 namespace MultipleTextEditor.PageSave
 {
     class SaveData
     {
-        private Dictionary<int, string> pageData = new Dictionary<int, string>();
-        public void SavePage(int page,string memo)
+        public void SavePage(int page, string memo, string path, Dictionary<int, string> pageData)
         {
-            StreamWriter sw = new StreamWriter("resources/PageData.txt");
-            pageData.Add(page, memo);
-            Console.WriteLine("hello");
+            IOrderedEnumerable<KeyValuePair<int, string>> sortedPageData = pageData.OrderBy(selector => {
+                return selector.Key;
+            });
 
-            foreach(var entry in pageData)
+            foreach (var entry in sortedPageData)
             {
-                sw.WriteLine(entry.Key + " " + entry.Value);
+                Console.WriteLine(entry.Key + " " + entry.Value);
             }
-            sw.Close();
-        }
-
-        /*
-        public String LoadPage(int page)
-        {
-            StreamReader sr = new StreamReader("resources/PageData.txt");
-            List<String> pageData = new List<String>;
-            while (sr.Peek() != -1)
+            if (System.IO.Directory.Exists(path))
             {
-                tmp = sr.ReadLine();
+                StreamWriter sw = new StreamWriter(path + "/PageData.txt");
+                foreach (var entry in sortedPageData)
+                {
+                    sw.WriteLine(entry.Key + " " + entry.Value);
+                }
+                sw.Close();
             }
 
         }
-        */
     }
 }
+
