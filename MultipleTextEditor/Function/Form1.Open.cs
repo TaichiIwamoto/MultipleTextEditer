@@ -38,24 +38,28 @@ namespace MultipleTextEditor
             string loadName = Text.Replace(".mte", "");
             path = "Data/" + loadName;
 
-            LoadData ld = new LoadData();
-            pageData = ld.LoadPage(path);
-            pageCount = pageData.Count();
-            text_memo.Text = pageData[1];
+            if (path != "Data/")
+            {
 
-            PageToolStripMenuItem.DropDownItems.Clear();
-            foreach (var entry in pageData)
-            {
-                Console.WriteLine(entry.Key + " " + entry.Value);
+                LoadData ld = new LoadData();
+                pageData = ld.LoadPage(path);
+                pageCount = pageData.Count();
+                text_memo.Text = pageData[1];
+
+                PageToolStripMenuItem.DropDownItems.Clear();
+                foreach (var entry in pageData)
+                {
+                    Console.WriteLine(entry.Key + " " + entry.Value);
+                }
+                for (int i = 0; i <= pageCount - 1; i++)
+                {
+                    ToolStripMenuItem tsmi2 = new ToolStripMenuItem();
+                    tsmi2.Text = String.Concat("Page", (i + 1).ToString());
+                    PageToolStripMenuItem.DropDownItems.Add(tsmi2.Text, null, Page_Click);
+                    Console.WriteLine("Page Added");
+                }
+                PageToolStripMenuItem.DropDownItems.Add("新規ページ", null, NewPage_Click);
             }
-            for (int i = 0; i <= pageCount - 1; i++)
-            {
-                ToolStripMenuItem tsmi2 = new ToolStripMenuItem();
-                tsmi2.Text = String.Concat("Page", (i+1).ToString());
-                PageToolStripMenuItem.DropDownItems.Add(tsmi2.Text, null, Page_Click);
-                Console.WriteLine("Page Added");
-            }
-            PageToolStripMenuItem.DropDownItems.Add("新規ページ", null, NewPage_Click);
         }
     }
 }
