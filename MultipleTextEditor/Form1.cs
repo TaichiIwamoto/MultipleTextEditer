@@ -115,8 +115,6 @@ namespace MultipleTextEditor
 
         }
 
-
-
         
     }
 }
