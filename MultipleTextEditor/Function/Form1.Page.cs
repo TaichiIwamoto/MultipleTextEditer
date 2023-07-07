@@ -18,12 +18,11 @@ namespace MultipleTextEditor
 
         
         private int prePageNum = 1;
-        private int currentPageNum;
+        private int currentPageNum = 1;
         private string page = "page1";
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
-            PageToolStripMenuItem.BackColor = Color.Gray;
             int page = 1;
 
             if (PageToolStripMenuItem.DropDownItems.Count == 0)
@@ -46,6 +45,7 @@ namespace MultipleTextEditor
         private void Page_Click(Object sender,EventArgs e)
         {
 
+
             SaveData sd = new SaveData();
             string memo;
             string page = sender.ToString();
@@ -54,22 +54,28 @@ namespace MultipleTextEditor
             int ipage = int.Parse(page);
             currentPageNum = ipage;
 
-            memo = text_memo.Text;
-            try
-            {
-                if (pageData.ContainsKey(prePageNum) && text_memo.Text != "")
-                {
-                    pageData.Remove(prePageNum);
-                }
-            pageData.Add(prePageNum, memo);
-            prePageNum = ipage;
-            }
-            catch (ArgumentException)
-            {
-                prePageNum = ipage;
-            }   
 
-            sd.SavePage(ipage, memo,path,pageData);
+            memo = text_memo.Text;
+            if (pageOpen != true)
+            {
+                try
+                {
+                    if (pageData.ContainsKey(prePageNum) && text_memo.Text != "")
+                    {
+                        pageData.Remove(prePageNum);
+                    }
+                    pageData.Add(prePageNum, memo);
+                }
+                catch (ArgumentException)
+                {
+                    prePageNum = ipage;
+                }
+
+                sd.SavePage(path, pageData);
+            }
+            pageOpen = false;
+            prePageNum = ipage;
+
             //Console.WriteLine("Save Start");
             if (pageData.ContainsKey(ipage))
             {

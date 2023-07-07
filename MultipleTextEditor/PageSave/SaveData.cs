@@ -13,7 +13,7 @@ namespace MultipleTextEditor.PageSave
 {
     class SaveData
     {
-        public void SavePage(int page, string memo, string path, Dictionary<int, string> pageData)
+        public void SavePage(string path, Dictionary<int, string> pageData)
         {
             IOrderedEnumerable<KeyValuePair<int, string>> sortedPageData = pageData.OrderBy(selector => {
                 return selector.Key;
@@ -30,9 +30,9 @@ namespace MultipleTextEditor.PageSave
                 {
                     sw.WriteLine(entry.Key + " " + entry.Value);
                 }
+                sw.Write(" ");
                 sw.Close();
             }
-
         }
     }
 }

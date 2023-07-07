@@ -16,23 +16,6 @@ namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetWindowRect(IntPtr hWnd, out Rect rect);
-
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
-
-        [DllImport("dwmapi.dll")]
-        private static extern int DwmGetWindowAttribute(IntPtr hWnd, int dwAttribute, out Rect rect, int cbAttribute);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetWindowDC(IntPtr hWnd);
-
-        [DllImport("gdi32.dll")]
-        public static extern int BitBlt(IntPtr hDestDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hdc);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -65,7 +48,7 @@ namespace MultipleTextEditor
         {
             ChangeToolStripMenuItemBackgroundColors();
         }
-        
+
 
         
 
@@ -83,21 +66,18 @@ namespace MultipleTextEditor
             autoSaveDialog.Visible = true;
             timer1.Interval = 3000; // 3秒
             timer1.Enabled = true;
+            if (!pageData.ContainsValue(text_memo.Text))
+            {
+                if (pageData.ContainsKey(currentPageNum))
+                {
+                    pageData.Remove(currentPageNum);
+                }
+                pageData.Add(currentPageNum, text_memo.Text);
+            }
+
+            sd.SavePage(path, pageData);
 
         }
-
-        private const int SRCCOPY = 13369376;
-        private const int DWMWA_EXTENDED_FRAME_BOUNDS = 9;
-
-        private struct Rect
-        {
-            public int left;
-            public int top;
-            public int right;
-            public int bottom;
-        }
-
-
         
         private void memo_CheckedChanged(object sender, EventArgs e)
         {
@@ -106,8 +86,11 @@ namespace MultipleTextEditor
 
         private void screenshot_CheckedChanged(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            if (screenshot.Checked)
+            {
+                Form2 form2 = new Form2();
+                form2.Show();
+            }
         }
 
         private void image_CheckedChanged(object sender, EventArgs e)
@@ -119,6 +102,6 @@ namespace MultipleTextEditor
         {
         }
 
-        
+
     }
 }

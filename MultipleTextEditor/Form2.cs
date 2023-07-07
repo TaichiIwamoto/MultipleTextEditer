@@ -236,6 +236,9 @@ namespace MultipleTextEditor
             //保存
             snaps.Add(bitmap_Window);
             AddToPreview(bitmap_Window);
+
+            //アプリを元の大きさに復元する
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void 選択範囲ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -21,6 +21,10 @@ namespace MultipleTextEditor
             Text = "無題 - メモ帳";
             OverWriteToolStripMenuItem.Enabled = false;
             autoSave.Enabled = false;
+            PageToolStripMenuItem.DropDownItems.Clear();
+            pageData.Clear();
+            prePageNum = 1;
+            PageNum.Text = "Page1";
 
             isOverWrite = false;
             自動保存ToolStripMenuItem.Checked = false;

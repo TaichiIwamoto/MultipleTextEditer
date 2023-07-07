@@ -17,7 +17,16 @@ namespace MultipleTextEditor
     {
         private void OverWriteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(FileName, text_memo.Text);
+            if (!pageData.ContainsValue(text_memo.Text))
+            {
+                if (pageData.ContainsKey(currentPageNum))
+                {
+                    pageData.Remove(currentPageNum);
+                }
+                pageData.Add(currentPageNum, text_memo.Text);
+            }
+
+            sd.SavePage(path, pageData);
         }
 
     }
