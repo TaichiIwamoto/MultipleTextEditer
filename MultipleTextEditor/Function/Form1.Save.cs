@@ -16,7 +16,7 @@ namespace MultipleTextEditor
     public partial class Form1 : Form
     {
         public string path;
-        
+        private SaveData sd = new SaveData();
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
@@ -39,13 +39,35 @@ namespace MultipleTextEditor
             Text = Path.GetFileName(FileName);
             string saveName = Text.Replace(".mte", "");
             path = "Data/"+ saveName;
+            
 
             if (!System.IO.Directory.Exists(path))
             {
                 Console.WriteLine("make a directory");
                 Directory.CreateDirectory(path);
-                File.Create(path + "/PageData.txt");
-                Console.WriteLine(currentPageNum.ToString(), text_memo);                
+                File.Create(path + "/PageData.txt").Close();
+                Console.WriteLine(currentPageNum.ToString(), text_memo);
+                if (!pageData.ContainsValue(text_memo.Text))
+                {
+                    Console.WriteLine("hello");
+                    pageData.Add(currentPageNum,text_memo.Text);
+                }
+
+                sd.SavePage(path, pageData);
+            }
+            else
+            {
+                if (!pageData.ContainsValue(text_memo.Text))
+                {
+                    if (pageData.ContainsKey(currentPageNum))
+                    {
+                        pageData.Remove(currentPageNum);
+                    }
+                    pageData.Add(currentPageNum, text_memo.Text);
+                        
+                }
+
+                sd.SavePage(path, pageData);
             }
         }
     }

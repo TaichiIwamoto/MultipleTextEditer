@@ -18,7 +18,7 @@ namespace MultipleTextEditor
 
         
         private int prePageNum = 1;
-        private int currentPageNum;
+        private int currentPageNum = 1;
         private string page = "page1";
         private void PageToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,6 +54,7 @@ namespace MultipleTextEditor
             int ipage = int.Parse(page);
             currentPageNum = ipage;
 
+
             memo = text_memo.Text;
             if (pageOpen != true)
             {
@@ -70,7 +71,7 @@ namespace MultipleTextEditor
                     prePageNum = ipage;
                 }
 
-                sd.SavePage(ipage, memo, path, pageData);
+                sd.SavePage(path, pageData);
             }
             pageOpen = false;
             prePageNum = ipage;
