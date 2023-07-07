@@ -66,6 +66,16 @@ namespace MultipleTextEditor
             autoSaveDialog.Visible = true;
             timer1.Interval = 3000; // 3秒
             timer1.Enabled = true;
+            if (!pageData.ContainsValue(text_memo.Text))
+            {
+                if (pageData.ContainsKey(currentPageNum))
+                {
+                    pageData.Remove(currentPageNum);
+                }
+                pageData.Add(currentPageNum, text_memo.Text);
+            }
+
+            sd.SavePage(path, pageData);
 
         }
         
@@ -90,6 +100,11 @@ namespace MultipleTextEditor
 
         private void PageNum_Click(object sender, EventArgs e)
         {
+        }
+
+        private void ToolStripComboBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

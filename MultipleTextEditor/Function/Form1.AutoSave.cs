@@ -38,6 +38,7 @@ namespace MultipleTextEditor
                 MessageBox.Show("ファイルを開くか保存してください");
 
             }
+
         }
     }
 }

@@ -37,9 +37,6 @@ namespace MultipleTextEditor.PageSave
                     nextNum = tmpLine.Substring(0, 1);
 
                 }
-
-                    
-
                 if (nextNum.Equals(count.ToString()))
                 {
                     lp.Add((int.Parse(tmp[0])), tmpString);
@@ -48,7 +45,6 @@ namespace MultipleTextEditor.PageSave
                     tmpString = "";
                     notNext = false;
                     continue;
-
                 }
                 else if (!tmpLine.Equals(" "))
                 {

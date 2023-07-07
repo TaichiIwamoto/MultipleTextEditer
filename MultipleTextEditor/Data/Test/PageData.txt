@@ -1,6 +1,0 @@
-1 Ts
-2 Kmeans
-3 Test
-4 Nazodesune
-5 aruyo
- 
