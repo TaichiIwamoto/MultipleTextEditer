@@ -44,8 +44,6 @@ namespace MultipleTextEditor
             this.FontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.リストの型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自動保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.text_memo = new System.Windows.Forms.RichTextBox();
             this.autoSave = new System.Windows.Forms.Timer(this.components);
@@ -57,12 +55,15 @@ namespace MultipleTextEditor
             this.autoSaveDialog = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PageNum = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
@@ -70,6 +71,7 @@ namespace MultipleTextEditor
             this.ConfigToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
             this.menuStrip1.Size = new System.Drawing.Size(803, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -135,7 +137,6 @@ namespace MultipleTextEditor
             this.ConfigToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FontToolStripMenuItem,
             this.StartupToolStripMenuItem,
-            this.リストの型ToolStripMenuItem,
             this.自動保存ToolStripMenuItem});
             this.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem";
             this.ConfigToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
@@ -153,7 +154,8 @@ namespace MultipleTextEditor
             // 
             this.StartupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1,
-            this.toolStripComboBox1});
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
             this.StartupToolStripMenuItem.Name = "StartupToolStripMenuItem";
             this.StartupToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.StartupToolStripMenuItem.Text = "スタートアップ";
@@ -162,22 +164,7 @@ namespace MultipleTextEditor
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "ON",
-            "OFF"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click_1);
-            // 
-            // リストの型ToolStripMenuItem
-            // 
-            this.リストの型ToolStripMenuItem.Name = "リストの型ToolStripMenuItem";
-            this.リストの型ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.リストの型ToolStripMenuItem.Text = "リストの型";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(271, 6);
             // 
             // 自動保存ToolStripMenuItem
             // 
@@ -205,9 +192,10 @@ namespace MultipleTextEditor
             // bullet
             // 
             this.bullet.Appearance = System.Windows.Forms.Appearance.Button;
-            this.bullet.Location = new System.Drawing.Point(148, 0);
+            this.bullet.Location = new System.Drawing.Point(247, 0);
+            this.bullet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.bullet.Name = "bullet";
-            this.bullet.Size = new System.Drawing.Size(70, 24);
+            this.bullet.Size = new System.Drawing.Size(117, 36);
             this.bullet.TabIndex = 3;
             this.bullet.TabStop = true;
             this.bullet.Text = "バレット";
@@ -218,7 +206,8 @@ namespace MultipleTextEditor
             // list
             // 
             this.list.Appearance = System.Windows.Forms.Appearance.Button;
-            this.list.Location = new System.Drawing.Point(224, 0);
+            this.list.Location = new System.Drawing.Point(373, 0);
+            this.list.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(70, 24);
             this.list.TabIndex = 5;
@@ -231,7 +220,8 @@ namespace MultipleTextEditor
             // memo
             // 
             this.memo.Appearance = System.Windows.Forms.Appearance.Button;
-            this.memo.Location = new System.Drawing.Point(300, 0);
+            this.memo.Location = new System.Drawing.Point(500, 0);
+            this.memo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.memo.Name = "memo";
             this.memo.Size = new System.Drawing.Size(70, 24);
             this.memo.TabIndex = 6;
@@ -298,6 +288,20 @@ namespace MultipleTextEditor
             this.PageNum.Text = "Page1";
             this.PageNum.Click += new System.EventHandler(this.PageNum_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(274, 34);
+            this.toolStripMenuItem1.Text = "ON";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(274, 34);
+            this.toolStripMenuItem2.Text = "OFF";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -313,6 +317,7 @@ namespace MultipleTextEditor
             this.Controls.Add(this.bullet);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
             this.Text = "多機能テキストエディタ";
             this.menuStrip1.ResumeLayout(false);
@@ -336,7 +341,7 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ToolStripMenuItem ConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StartupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem リストの型ToolStripMenuItem;
+       
         private System.Windows.Forms.ToolStripMenuItem 自動保存ToolStripMenuItem;
         private System.Windows.Forms.Timer autoSave;
         private System.Windows.Forms.RadioButton bullet;
@@ -349,7 +354,8 @@ namespace MultipleTextEditor
         private System.Windows.Forms.RichTextBox text_memo;
         private System.Windows.Forms.Label PageNum;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 
