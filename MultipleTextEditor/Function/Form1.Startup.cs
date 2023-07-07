@@ -17,6 +17,7 @@ namespace MultipleTextEditor
     public partial class Form1 : Form
     {
 
+
         private void StartupToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
