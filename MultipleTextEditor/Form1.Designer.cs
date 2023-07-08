@@ -262,7 +262,7 @@ namespace MultipleTextEditor
             this.image.Size = new System.Drawing.Size(70, 24);
             this.image.TabIndex = 8;
             this.image.TabStop = true;
-            this.image.Text = "イメージ";
+            this.image.Text = "ペイント";
             this.image.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.image.UseVisualStyleBackColor = true;
             this.image.CheckedChanged += new System.EventHandler(this.image_CheckedChanged);
