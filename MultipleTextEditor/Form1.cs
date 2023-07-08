@@ -95,7 +95,11 @@ namespace MultipleTextEditor
 
         private void image_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (image.Checked)
+            {
+                DrawingForm drawingForm = new DrawingForm();
+                drawingForm.Show();
+            }
         }
 
         private void PageNum_Click(object sender, EventArgs e)
