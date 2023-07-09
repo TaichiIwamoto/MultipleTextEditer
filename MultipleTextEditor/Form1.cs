@@ -21,6 +21,8 @@ namespace MultipleTextEditor
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool IsWindow(IntPtr hWnd);
         string FileName = ""; //現在開いているファイル名
+
+        
         
 
         //MenuStripの背景色をデフォルトカラーに戻す関数
@@ -35,6 +37,8 @@ namespace MultipleTextEditor
         public Form1()
         {
             InitializeComponent();
+            memo.Checked = true;
+
         }
         private void FileToolStripMenuItem_Click(object sender, EventArgs e)
         {

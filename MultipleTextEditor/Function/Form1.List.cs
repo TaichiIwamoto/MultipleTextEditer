@@ -124,8 +124,6 @@ namespace MultipleTextEditor
                             text_memo.SelectedText = newText;
 
 
-
-
                             text_memo.AppendText(Environment.NewLine);
                             textChangedFlag = false;
 
@@ -160,26 +158,32 @@ namespace MultipleTextEditor
 
         private void IncrementX(Item item)
         {
-            item.X++;
+            if (item.X < item.Y)
+            {
+                item.X++;
 
-            int selectionStart = text_memo.SelectionStart - 1;
-            int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
-            int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
-            text_memo.SelectionStart = lineStart;
-            text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
-            text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
+                int selectionStart = text_memo.SelectionStart - 1;
+                int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
+                int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
+                text_memo.SelectionStart = lineStart;
+                text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
+                text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
+            }
         }
 
         private void DecrementX(Item item)
         {
-            item.X--;
+            if (item.X > 0)
+            {
+                item.X--;
 
-            int selectionStart = text_memo.SelectionStart - 1;
-            int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
-            int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
-            text_memo.SelectionStart = lineStart;
-            text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
-            text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
+                int selectionStart = text_memo.SelectionStart - 1;
+                int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
+                int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
+                text_memo.SelectionStart = lineStart;
+                text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
+                text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
+            }
         }
     }
 }

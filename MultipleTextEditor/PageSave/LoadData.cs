@@ -30,12 +30,22 @@ namespace MultipleTextEditor.PageSave
                     Console.WriteLine(tmp[1]);
                     tmpString += tmp[1];
                     tmpLine = sr.ReadLine();
-                    nextNum = tmpLine.Substring(0, 1);
+                    try {
+                        nextNum = tmpLine.Substring(0, 1);
+                    } catch (ArgumentOutOfRangeException)
+                    {
+                        nextNum = (count + 1).ToString();
+                    }
                 }else{
                     tmp = line.Split(' ');
                     tmpLine = sr.ReadLine();
-                    nextNum = tmpLine.Substring(0, 1);
-
+                    try
+                    {
+                        nextNum = tmpLine.Substring(0, 1);
+                    }catch (ArgumentOutOfRangeException)
+                    {
+                        nextNum = "-1";
+                    }
                 }
                 if (nextNum.Equals(count.ToString()))
                 {
