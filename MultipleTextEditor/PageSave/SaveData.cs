@@ -30,7 +30,7 @@ namespace MultipleTextEditor.PageSave
                 {
                     sw.WriteLine(entry.Key + " " + entry.Value);
                 }
-                sw.Write(" ");
+                sw.Write("\n ");
                 sw.Close();
             }
         }

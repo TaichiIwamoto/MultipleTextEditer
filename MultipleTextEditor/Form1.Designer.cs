@@ -106,7 +106,8 @@ namespace MultipleTextEditor
             // 
             this.OverWriteToolStripMenuItem.Enabled = false;
             this.OverWriteToolStripMenuItem.Name = "OverWriteToolStripMenuItem";
-            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.OverWriteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OverWriteToolStripMenuItem.Text = "上書き保存";
             this.OverWriteToolStripMenuItem.Click += new System.EventHandler(this.OverWriteToolStripMenuItem_Click);
             // 
