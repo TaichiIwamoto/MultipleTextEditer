@@ -62,7 +62,7 @@ namespace MultipleTextEditor
 
             public override string ToString()
             {
-                return $"{Name}[{X}/{Y}] ";
+                return $"・{Name}[{X}/{Y}] ";
             }
         }
 
@@ -70,7 +70,7 @@ namespace MultipleTextEditor
         private void list_CheckedChanged(object sender, EventArgs e)
         {
             isListMode = list.Checked;
-            text_memo.SelectionBullet = list.Checked;
+            //text_memo.SelectionBullet = list.Checked;
         }
 
         private void text_memo_KeyDown(object sender, KeyEventArgs e)
@@ -144,7 +144,7 @@ namespace MultipleTextEditor
                             int thisItemListIndex = itemList.Count - 1;
 
 
-                            string newText = $"{name}[{x}/{y}]";
+                            string newText = $"・{name}[{x}/{y}]";
 
                             // 特定の行を置換
                             text_memo.SelectionStart = lineStart;
