@@ -15,16 +15,20 @@ namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
+        private bool bulletEnabled = false;
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            text_memo.SelectionBullet = true;
             
             if (bullet.Checked)
-            {
+            {   
+                text_memo.SelectedText = Environment.NewLine + "・";
+                bulletEnabled = true;
                 text_memo.KeyPress += text_memo_KeyPress;
             }
             else
             {
+                bulletEnabled = false;
                 text_memo.KeyPress -= text_memo_KeyPress;
             }
         }
@@ -33,9 +37,11 @@ namespace MultipleTextEditor
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                text_memo.SelectionBullet = true;
                 e.Handled = true;
+                text_memo.SelectionStart = text_memo.TextLength;
+                text_memo.SelectedText = "・";
             }
         }
     }
+
 }

@@ -20,25 +20,21 @@ namespace MultipleTextEditor
         private void 自動保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem clickedItem = (ToolStripMenuItem)sender;
+
             if (clickedItem.Checked == true)
             {
-                clickedItem.Checked = !clickedItem.Checked;
+                clickedItem.Checked = false;
                 autoSave.Enabled = false;
             }
-
-            if (clickedItem.Checked == false && isOverWrite == true)
+            else if (clickedItem.Checked == false && isOverWrite == true)
             {
-                clickedItem.Checked = !clickedItem.Checked;
+                clickedItem.Checked = true;
                 autoSave.Enabled = true;
-
             }
-
-            if (clickedItem.Checked == false && isOverWrite == false)
+            else if (clickedItem.Checked == false && isOverWrite == false)
             {
                 MessageBox.Show("ファイルを開くか保存してください");
-
             }
-
         }
     }
 }
