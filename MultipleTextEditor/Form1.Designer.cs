@@ -200,7 +200,7 @@ namespace MultipleTextEditor
             // 
             // autoSave
             // 
-            this.autoSave.Interval = 10000;
+            this.autoSave.Interval = 60000;
             this.autoSave.Tick += new System.EventHandler(this.autoSave_Tick);
             // 
             // bullet

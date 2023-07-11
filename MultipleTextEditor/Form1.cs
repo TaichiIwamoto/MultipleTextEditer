@@ -68,8 +68,9 @@ namespace MultipleTextEditor
 
           
             autoSaveDialog.Visible = true;
-            timer1.Interval = 3000; // 3秒
+            timer1.Interval = 3000; // 30秒
             timer1.Enabled = true;
+
             if (!pageData.ContainsValue(text_memo.Text))
             {
                 if (pageData.ContainsKey(currentPageNum))
