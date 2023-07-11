@@ -256,7 +256,7 @@ namespace MultipleTextEditor
             this.screenshot.Text = "スクショ";
             this.screenshot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.screenshot.UseVisualStyleBackColor = true;
-            this.screenshot.CheckedChanged += new System.EventHandler(this.screenshot_CheckedChanged);
+            this.screenshot.Click += new System.EventHandler(this.screenshot_Click);
             // 
             // image
             // 
@@ -269,7 +269,7 @@ namespace MultipleTextEditor
             this.image.Text = "ペイント";
             this.image.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.image.UseVisualStyleBackColor = true;
-            this.image.CheckedChanged += new System.EventHandler(this.image_CheckedChanged);
+            this.image.Click += new System.EventHandler(this.image_Click);
             // 
             // autoSaveDialog
             // 

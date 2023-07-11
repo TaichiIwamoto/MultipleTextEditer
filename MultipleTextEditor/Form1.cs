@@ -89,22 +89,20 @@ namespace MultipleTextEditor
             text_memo.SelectionBullet = false;
         }
 
-        private void screenshot_CheckedChanged(object sender, EventArgs e)
+        private void screenshot_Click(object sender, EventArgs e)
         {
-            if (screenshot.Checked)
-            {
-                Form2 form2 = new Form2();
-                form2.Show();
-            }
+            
+            Form2 form2 = new Form2();
+            form2.Show();
+            
         }
 
-        private void image_CheckedChanged(object sender, EventArgs e)
+        private void image_Click(object sender, EventArgs e)
         {
-            if (image.Checked)
-            {
-                DrawingForm drawingForm = new DrawingForm();
-                drawingForm.Show();
-            }
+            
+            DrawingForm drawingForm = new DrawingForm();
+            drawingForm.Show();
+            
         }
 
         private void PageNum_Click(object sender, EventArgs e)

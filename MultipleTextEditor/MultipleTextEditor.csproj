@@ -76,7 +76,7 @@
     <Compile Include="Function\Form1.Startup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Function\Form1.AutoSave.cs">
+    <Compile Include="Function\Form1.AutoSaveOnOff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Function\Form1.Bullet.cs">
