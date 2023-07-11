@@ -19,7 +19,6 @@ namespace MultipleTextEditor
         {
             text_memo.SelectionBullet = true;
             
-            
             if (bullet.Checked)
             {
                 text_memo.KeyPress += text_memo_KeyPress;

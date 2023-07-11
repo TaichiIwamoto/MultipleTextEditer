@@ -97,11 +97,9 @@ namespace MultipleTextEditor
                         if (input.Contains("["))
                         {
                             string[] parts = input.Split('[', '/', ']');
-
                             string name = parts[0];
                             int x = int.Parse(parts[1]);
                             int y = int.Parse(parts[2]);
-
 
                             // itemListを更新
                             // itemListにnameが存在するかチェックし、存在すれば対応するItemを更新する
