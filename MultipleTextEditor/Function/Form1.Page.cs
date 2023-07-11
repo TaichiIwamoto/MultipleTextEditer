@@ -86,6 +86,7 @@ namespace MultipleTextEditor
             text_memo.Text = "";
 
             }
+            UpdateButtonVisibility();
         }
     }
 }
