@@ -155,7 +155,7 @@ namespace MultipleTextEditor
                             text_memo.AppendText(Environment.NewLine);
                             textChangedFlag = false;
 
-                            System.Windows.Forms.Button plusButton = new System.Windows.Forms.Button();
+                           /* System.Windows.Forms.Button plusButton = new System.Windows.Forms.Button();
                             plusButton.Text = "+";
                             plusButton.Size = new Size(30, text_memo.Font.Height + 5);
                             //plusButton.Font = new Font(text_memo.Font.FontFamily, text_memo.Font.Size);
@@ -179,7 +179,7 @@ namespace MultipleTextEditor
                             minusButton.Click += (s, ev) => DecrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
                             minusButton.Tag = prePageNum;
                             this.Controls.Add(minusButton);
-                            minusButton.BringToFront();
+                            minusButton.BringToFront();*/
                         }
                     }
                 }
