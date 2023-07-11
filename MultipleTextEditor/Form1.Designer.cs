@@ -91,14 +91,14 @@ namespace MultipleTextEditor
             // CreateToolStripMenuItem
             // 
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
-            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.CreateToolStripMenuItem.Text = "新規";
             this.CreateToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -107,21 +107,21 @@ namespace MultipleTextEditor
             this.OverWriteToolStripMenuItem.Enabled = false;
             this.OverWriteToolStripMenuItem.Name = "OverWriteToolStripMenuItem";
             this.OverWriteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OverWriteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.OverWriteToolStripMenuItem.Text = "上書き保存";
             this.OverWriteToolStripMenuItem.Click += new System.EventHandler(this.OverWriteToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.SaveToolStripMenuItem.Text = "名前を付けて保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.ExitToolStripMenuItem.Text = "終了";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -206,7 +206,7 @@ namespace MultipleTextEditor
             // bullet
             // 
             this.bullet.Appearance = System.Windows.Forms.Appearance.Button;
-            this.bullet.Location = new System.Drawing.Point(152, 0);
+            this.bullet.Location = new System.Drawing.Point(232, 0);
             this.bullet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.bullet.Name = "bullet";
             this.bullet.Size = new System.Drawing.Size(70, 24);
@@ -220,7 +220,7 @@ namespace MultipleTextEditor
             // list
             // 
             this.list.Appearance = System.Windows.Forms.Appearance.Button;
-            this.list.Location = new System.Drawing.Point(232, 1);
+            this.list.Location = new System.Drawing.Point(312, 1);
             this.list.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(70, 24);
@@ -234,7 +234,7 @@ namespace MultipleTextEditor
             // memo
             // 
             this.memo.Appearance = System.Windows.Forms.Appearance.Button;
-            this.memo.Location = new System.Drawing.Point(312, 1);
+            this.memo.Location = new System.Drawing.Point(152, 1);
             this.memo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.memo.Name = "memo";
             this.memo.Size = new System.Drawing.Size(70, 24);
