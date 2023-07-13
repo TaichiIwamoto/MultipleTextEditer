@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+Ver:Release_1.1
+
+修正済みのバグ
+T4-7    修正完了
+T4-8    そのような仕様ではない
+T4-9    修正完了
+T4-10   複数のウィンドウを開くことができる仕様
+*********************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,7 +117,15 @@ namespace MultipleTextEditor
             // pictureBox の大きさをフォームのクライアント領域に合わせる
             pictureBox.Size = new Size(ClientSize.Width, ClientSize.Height);
             // キャンバスを再作成してサイズを合わせる
-            Bitmap newCanvas = new Bitmap(pictureBox.Width, pictureBox.Height);
+            Bitmap newCanvas;
+            try
+            {
+                newCanvas = new Bitmap(pictureBox.Width, pictureBox.Height);
+            }
+            catch (System.ArgumentException)
+            {
+                newCanvas = new Bitmap(1, 1);
+            }
             using (Graphics g = Graphics.FromImage(newCanvas))
             {
                 g.DrawImage(canvas, Point.Empty);
