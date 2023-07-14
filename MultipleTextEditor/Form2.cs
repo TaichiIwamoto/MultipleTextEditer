@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+Ver:Release_1.1
+
+修正済みのバグ
+T5-4    修正完了
+*********************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -257,6 +266,31 @@ namespace MultipleTextEditor
         }
 
         private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (snaps.Count < 1)
+            {
+                return;
+            }
+            else
+            {
+                string defaultFileName = "Screenshot_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+
+
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "PNGファイル (*.png)|*.png";
+                    saveFileDialog.FileName = defaultFileName;
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string fileName = saveFileDialog.FileName;
+                        snaps[snaps.Count - 1].Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
+                        MessageBox.Show($"画像を保存しました: {fileName}");
+                    }
+                }
+            }
+        }
+
+        private void すべて保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Utility.SaveAsImages(snaps);
         }

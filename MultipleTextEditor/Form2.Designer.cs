@@ -36,10 +36,11 @@ namespace MultipleTextEditor
             this.全画面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.アクティブウィンドウToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.選択範囲ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
             this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.すべて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@ namespace MultipleTextEditor
             this.保存ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1733, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1733, 42);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,23 +81,39 @@ namespace MultipleTextEditor
             // 全画面ToolStripMenuItem
             // 
             this.全画面ToolStripMenuItem.Name = "全画面ToolStripMenuItem";
-            this.全画面ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.全画面ToolStripMenuItem.Size = new System.Drawing.Size(321, 44);
             this.全画面ToolStripMenuItem.Text = "全画面";
             this.全画面ToolStripMenuItem.Click += new System.EventHandler(this.全画面ToolStripMenuItem_Click);
             // 
             // アクティブウィンドウToolStripMenuItem
             // 
             this.アクティブウィンドウToolStripMenuItem.Name = "アクティブウィンドウToolStripMenuItem";
-            this.アクティブウィンドウToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.アクティブウィンドウToolStripMenuItem.Size = new System.Drawing.Size(321, 44);
             this.アクティブウィンドウToolStripMenuItem.Text = "アクティブウィンドウ";
             this.アクティブウィンドウToolStripMenuItem.Click += new System.EventHandler(this.アクティブウィンドウToolStripMenuItem_Click);
             // 
             // 選択範囲ToolStripMenuItem
             // 
             this.選択範囲ToolStripMenuItem.Name = "選択範囲ToolStripMenuItem";
-            this.選択範囲ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.選択範囲ToolStripMenuItem.Size = new System.Drawing.Size(321, 44);
             this.選択範囲ToolStripMenuItem.Text = "選択範囲";
             this.選択範囲ToolStripMenuItem.Click += new System.EventHandler(this.選択範囲ToolStripMenuItem_Click);
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.名前を付けて保存ToolStripMenuItem,
+            this.すべて保存ToolStripMenuItem});
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(83, 38);
+            this.保存ToolStripMenuItem.Text = "保存";
+            // 
+            // 名前を付けて保存ToolStripMenuItem
+            // 
+            this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存";
+            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -113,20 +130,12 @@ namespace MultipleTextEditor
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // 保存ToolStripMenuItem
+            // すべて保存ToolStripMenuItem
             // 
-            this.保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.名前を付けて保存ToolStripMenuItem});
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(83, 38);
-            this.保存ToolStripMenuItem.Text = "保存";
-            // 
-            // 名前を付けて保存ToolStripMenuItem
-            // 
-            this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存";
-            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
+            this.すべて保存ToolStripMenuItem.Name = "すべて保存ToolStripMenuItem";
+            this.すべて保存ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.すべて保存ToolStripMenuItem.Text = "すべて保存";
+            this.すべて保存ToolStripMenuItem.Click += new System.EventHandler(this.すべて保存ToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -160,5 +169,6 @@ namespace MultipleTextEditor
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem すべて保存ToolStripMenuItem;
     }
 }
