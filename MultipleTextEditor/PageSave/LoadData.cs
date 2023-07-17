@@ -12,71 +12,85 @@ namespace MultipleTextEditor.PageSave
         public Dictionary<int, string> LoadPage(string path)
         {
             Dictionary<int, string> lp = new Dictionary<int, string>();
-
-            StreamReader sr = new StreamReader(path + "/PageData.txt");
-
-            int count = 2;
-            string tmpLine = "";
-            string nextNum = "";
-            string[] tmp = new string[1];
-            string tmpString = "";
-            string line = sr.ReadLine();
-            bool notNext = false;
-            while (sr.Peek() != -1)
+            try
             {
-                if (notNext == false)
+                StreamReader sr = new StreamReader(path + "/PageData.txt");
+                int count = 2;
+                string tmpLine = "";
+                string nextNum = "";
+                string[] tmp = new string[1];
+                string tmpString = "";
+                string line = sr.ReadLine();
+                bool notNext = false;
+                while (sr.Peek() != -1)
                 {
-                    tmp = line.Split(' ');
-                    Console.WriteLine(tmp[1]);
-                    tmpString += tmp[1];
-                    tmpLine = sr.ReadLine();
-                    try {
-                        nextNum = tmpLine.Substring(0, 1);
-                    } catch (ArgumentOutOfRangeException)
+                    if (notNext == false)
                     {
-                        nextNum = (count + 1).ToString();
+                        tmp = line.Split(' ');
+                        Console.WriteLine(tmp[1]);
+                        tmpString += tmp[1];
+                        tmpLine = sr.ReadLine();
+                        try
+                        {
+                            nextNum = tmpLine.Substring(0, 1);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            nextNum = (count + 1).ToString();
+                        }
                     }
-                }else{
-                    tmp = line.Split(' ');
-                    tmpLine = sr.ReadLine();
-                    try
+                    else
                     {
-                        nextNum = tmpLine.Substring(0, 1);
-                    }catch (ArgumentOutOfRangeException)
-                    {
-                        nextNum = "-1";
+                        tmp = line.Split(' ');
+                        tmpLine = sr.ReadLine();
+                        try
+                        {
+                            nextNum = tmpLine.Substring(0, 1);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            nextNum = "-1";
+                        }
                     }
+                    if (nextNum.Equals(count.ToString()))
+                    {
+                        lp.Add((int.Parse(tmp[0])), tmpString);
+                        count += 1;
+                        line = tmpLine;
+                        tmpString = "";
+                        notNext = false;
+                        continue;
+                    }
+                    else if (!tmpLine.Equals(" "))
+                    {
+                        tmpString += $"\n{tmpLine}";
+                        Console.WriteLine("tmpString = " + tmpString);
+                        notNext = true;
+                        continue;
+                    }
+                    else
+                    {
+                        lp.Add((int.Parse(tmp[0])), tmp[1]);
+                    }
+
+
                 }
-                if (nextNum.Equals(count.ToString()))
+
+                foreach (var entry in lp)
                 {
-                    lp.Add((int.Parse(tmp[0])), tmpString);
-                    count += 1;
-                    line = tmpLine;
-                    tmpString = "";
-                    notNext = false;
-                    continue;
+                    Console.WriteLine(entry.Key + " " + entry.Value);
                 }
-                else if (!tmpLine.Equals(" "))
-                {
-                    tmpString += $"\n{tmpLine}";
-                    Console.WriteLine("tmpString = "+tmpString);
-                    notNext = true;
-                    continue;
-                }
-                else
-                {
-                    lp.Add((int.Parse(tmp[0])), tmp[1]);
-                }
-               
-                
+                sr.Close();
+                return lp;
+            }
+            catch (DirectoryNotFoundException)
+            {
+
+                lp.Add(1, "#データが存在しませんでした.");
+                return lp;
             }
 
-            foreach (var entry in lp)
-            {
-                Console.WriteLine(entry.Key + " " + entry.Value);
-            }
-            sr.Close();
-            return lp;
+
 
         }
     }
