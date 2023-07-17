@@ -43,6 +43,11 @@ namespace MultipleTextEditor
 
                 LoadData ld = new LoadData();
                 pageData = ld.LoadPage(path);
+                if (pageData[1].Equals("#データが存在しませんでした.")){
+                    Directory.CreateDirectory(path);
+                    File.Create(path + "/PageData.txt").Close();
+                }
+
                 pageCount = pageData.Count();
                 text_memo.Text = pageData[1];
 
