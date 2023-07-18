@@ -9,7 +9,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
-
+/*
+ 担当者　Kotaro Shirai (github name takuuo2)
+ C10 設定変更
+フォントを変更する機能の実装
+ */
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
@@ -18,11 +22,11 @@ namespace MultipleTextEditor
         private void FontToolStripMenuItem_Click(Object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
-            // �t�H���g�_�C�A���O��\�����ă��[�U�[�Ƀt�H���g�T�C�Y��I��������
+            // フォントダイアログを表示してユーザーにフォントサイズを選択させる
             FontDialog fontDialog = new FontDialog();
             if (fontDialog.ShowDialog() == DialogResult.OK)
             {
-                // �I�����ꂽ�t�H���g�T�C�Y��K�p����
+                // 選択されたフォントサイズを適用する
                 text_memo.Font = fontDialog.Font;
                 font = text_memo.Font.ToString();
                 sd.SaveFont(path, font);
