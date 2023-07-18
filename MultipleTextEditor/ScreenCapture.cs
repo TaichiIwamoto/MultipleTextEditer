@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+概要:スクリーンショットの撮影
+*********************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
