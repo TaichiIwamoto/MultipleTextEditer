@@ -14,6 +14,7 @@ namespace MultipleTextEditor
 {
     public partial class Form1 : Form
     {
+        private string font;
         private void FontToolStripMenuItem_Click(Object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
@@ -23,6 +24,8 @@ namespace MultipleTextEditor
             {
                 // 選択されたフォントサイズを適用する
                 text_memo.Font = fontDialog.Font;
+                font = text_memo.Font.ToString();
+                sd.SaveFont(path, font);
             }
         }
 

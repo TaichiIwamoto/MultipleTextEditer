@@ -46,14 +46,14 @@ namespace MultipleTextEditor
                 Console.WriteLine("make a directory");
                 Directory.CreateDirectory(path);
                 File.Create(path + "/PageData.txt").Close();
+                File.Create(path + "/FontData.txt").Close();
                 Console.WriteLine(currentPageNum.ToString(), text_memo);
                 if (!pageData.ContainsValue(text_memo.Text))
                 {
                     Console.WriteLine("hello");
                     pageData.Add(currentPageNum,text_memo.Text);
                 }
-
-                sd.SavePage(path, pageData);
+                sd.SaveFont(path, font);
             }
             else
             {
