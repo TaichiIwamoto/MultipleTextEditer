@@ -36,6 +36,20 @@ namespace MultipleTextEditor.PageSave
                 sw.Close();
             }
         }
+
+        public void SaveFont(string path, string font)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(path + "/FontData.txt");
+                Console.WriteLine(font);
+                sw.WriteLine(font);
+                sw.Close();
+            }catch (UnauthorizedAccessException)
+            {
+                return;
+            }
+        }
     }
 }
 
