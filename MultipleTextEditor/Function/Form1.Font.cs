@@ -1,3 +1,9 @@
+/*
+ 担当者　Kotaro Shirai (github name takuuo2)
+
+ 概要:C10 設定変更
+フォントを変更する機能の実装
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +15,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
-/*
- 担当者　Kotaro Shirai (github name takuuo2)
 
- 概要:C10 設定変更
-フォントを変更する機能の実装
- */
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
