@@ -1,4 +1,8 @@
-﻿
+﻿/*********************************************
+担当者:VSによる自動生成
+
+概要:PenSizeFormのUI処理
+*********************************************/﻿
 namespace MultipleTextEditor
 {
     partial class PenSizeForm
