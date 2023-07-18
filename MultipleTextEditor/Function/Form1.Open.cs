@@ -18,6 +18,7 @@ namespace MultipleTextEditor
         public Dictionary<int, string> pageData = new Dictionary<int, string>();
         private int pageCount = 0;
         private bool pageOpen = false;
+        private string[] fontData = new string[4];
 
         public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -37,15 +38,21 @@ namespace MultipleTextEditor
             Text = Path.GetFileName(FileName);
             string loadName = Text.Replace(".mte", "");
             path = "Data/" + loadName;
-
             if (path != "Data/")
             {
 
-                LoadData ld = new LoadData();
+            LoadData ld = new LoadData();
+            fontData = ld.LoadFont(path);
+            text_memo.Font = new Font(fontData[0], float.Parse(fontData[1]));
+
+
+
                 pageData = ld.LoadPage(path);
-                if (pageData[1].Equals("#データが存在しませんでした.")){
+                if (pageData[1].Equals("#データが存在しませんでした."))
+                {
                     Directory.CreateDirectory(path);
                     File.Create(path + "/PageData.txt").Close();
+                    File.Create(path + "/FontData.txt").Close();
                 }
 
                 pageCount = pageData.Count();

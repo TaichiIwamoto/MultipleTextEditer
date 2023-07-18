@@ -27,6 +27,7 @@ namespace MultipleTextEditor
             }
 
             sd.SavePage(path, pageData);
+
         }
 
     }

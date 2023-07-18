@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Morokawa Hiroyuki
+
+概要:ページの内容とフォントの設定を読み込む
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -89,9 +94,41 @@ namespace MultipleTextEditor.PageSave
                 lp.Add(1, "#データが存在しませんでした.");
                 return lp;
             }
+            catch (FileNotFoundException)
+            {
+                File.Create(path + "/PageData.txt").Close();
+                lp.Add(1, "#データが存在しませんでした.");
+                return lp;
+            }
+        }
 
+        public string[] LoadFont(string path)
+        {
+           
+                StreamReader sr = new StreamReader(path + "/FontData.txt");
+                string font = sr.ReadToEnd();
+                Console.WriteLine("aa", font);
+                sr.Close();
+                string[] fontData = new string[5];
+                string[] fontTmp = font.Split(',');
+            try
+            {
+                fontData[0] = fontTmp[0].Replace("[Font: Name=", "");
+                fontData[1] = fontTmp[1].Replace(" Size=", "");
+                fontData[2] = fontTmp[2].Replace(" Units=", "");
+                fontData[3] = fontTmp[3].Replace(" GdiCharSet=", "");
+                fontData[4] = fontTmp[4].Replace(" GdiVerticalFont=", "").Replace("]", "");
 
-
+                foreach (string str in fontData)
+                {
+                    Console.WriteLine(str);
+                }
+                return fontData;
+            }catch (IndexOutOfRangeException){
+                fontData[0] = "MS UI Gothic";
+                fontData[1] = "9";
+                return fontData;
+            }
         }
     }
 }

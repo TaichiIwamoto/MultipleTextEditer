@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Iwamoto Taichi
+
+概要:ページの内容を保存する
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +39,20 @@ namespace MultipleTextEditor.PageSave
                 }
                 sw.Write((page+1).ToString()," 仮データ","\n ");
                 sw.Close();
+            }
+        }
+
+        public void SaveFont(string path, string font)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(path + "/FontData.txt");
+                Console.WriteLine(font);
+                sw.WriteLine(font);
+                sw.Close();
+            }catch (UnauthorizedAccessException)
+            {
+                return;
             }
         }
     }

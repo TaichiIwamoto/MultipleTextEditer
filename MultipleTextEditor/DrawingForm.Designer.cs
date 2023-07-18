@@ -1,4 +1,10 @@
-﻿using System.Drawing.Drawing2D;
+﻿/*********************************************
+担当者:VSによる自動生成（一部Yutaro TANAKAが編集）
+
+概要:DrawingFormのUI
+*********************************************/
+
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System;
 using System.Drawing;

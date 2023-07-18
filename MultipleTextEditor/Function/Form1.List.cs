@@ -26,7 +26,10 @@ namespace MultipleTextEditor
 
         private void text_memo_TextChanged(object sender, EventArgs e)
         {
-            textChangedFlag = true;
+            if (isListMode)
+            {
+                textChangedFlag = true;
+            }
         }
 
 
@@ -60,21 +63,14 @@ namespace MultipleTextEditor
             }
 
 
-            public override string ToString()
-            {
-                return $"{Name}[{X}/{Y}] ";
-            }
+            
         }
 
 
         private void list_CheckedChanged(object sender, EventArgs e)
         {
             isListMode = list.Checked;
-            if (isListMode)
-            {
-                //text_memo.SelectionBullet = list.Checked;
-                insertBullet();
-            }
+            
         }
 
         private void text_memo_KeyDown(object sender, KeyEventArgs e)
@@ -92,7 +88,7 @@ namespace MultipleTextEditor
                 int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
                 if (lineIndex >= 0 && lineIndex < text_memo.Lines.Length)
                 {
-                    int cursorPosition = selectionStart - lineStart;
+                    
 
                     string input = text_memo.Lines[lineIndex].Trim();
 
@@ -143,10 +139,10 @@ namespace MultipleTextEditor
                                 }
                             }
                             itemList.Add(new Item(name, x, y, selectionStart));
-                            int thisItemListIndex = itemList.Count - 1;
+                            //int thisItemListIndex = itemList.Count - 1;
 
 
-                            string newText = $"{name}[{x}/{y}]";
+                            string newText = $"・{name}[{x}/{y}]";
 
                             // 特定の行を置換
                             text_memo.SelectionStart = lineStart;
@@ -157,32 +153,13 @@ namespace MultipleTextEditor
                             text_memo.AppendText(Environment.NewLine);
                             textChangedFlag = false;
 
-                            /* System.Windows.Forms.Button plusButton = new System.Windows.Forms.Button();
-                             plusButton.Text = "+";
-                             plusButton.Size = new Size(30, text_memo.Font.Height + 5);
-                             //plusButton.Font = new Font(text_memo.Font.FontFamily, text_memo.Font.Size);
-                             var charIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
-                             var charPosition = text_memo.GetPositionFromCharIndex(charIndex);
-                             plusButton.Location = new Point(text_memo.Left + charPosition.X + 15, text_memo.Top + charPosition.Y + 3);
 
-                             plusButton.Click += (s, ev) => IncrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
-                             plusButton.Tag = prePageNum;
-                             this.Controls.Add(plusButton);
-                             plusButton.BringToFront();
-
-                             System.Windows.Forms.Button minusButton = new System.Windows.Forms.Button();
-                             minusButton.Text = "-";
-                             minusButton.Size = new Size(30, text_memo.Font.Height + 5);
-
-                             var minuscharIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
-                             var minuscharPosition = text_memo.GetPositionFromCharIndex(charIndex);
-                             minusButton.Location = new Point(text_memo.Left + minuscharPosition.X + 45, text_memo.Top + minuscharPosition.Y + 3);
-
-                             minusButton.Click += (s, ev) => DecrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
-                             minusButton.Tag = prePageNum;
-                             this.Controls.Add(minusButton);
-                             minusButton.BringToFront();*/
                         }
+                    }
+                    else
+                    {
+                        text_memo.AppendText(Environment.NewLine);
+                        textChangedFlag = false;
                     }
                 }
             }
@@ -209,35 +186,9 @@ namespace MultipleTextEditor
         }
 
 
-        private void IncrementX(Item item)
-        {
-            if (item.X < item.Y)
-            {
-                item.X++;
+      
 
-                int selectionStart = item.Selectionstart;
-                int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
-                int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
-                text_memo.SelectionStart = lineStart;
-                text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
-                text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
-            }
-        }
-
-        private void DecrementX(Item item)
-        {
-            if (item.X > 0)
-            {
-                item.X--;
-
-                int selectionStart = item.Selectionstart;
-                int lineIndex = text_memo.GetLineFromCharIndex(selectionStart);
-                int lineStart = text_memo.GetFirstCharIndexFromLine(lineIndex);
-                text_memo.SelectionStart = lineStart;
-                text_memo.SelectionLength = text_memo.Lines[lineIndex].Length;
-                text_memo.SelectedText = $"{item.Name}[{item.X}/{item.Y}]";
-            }
-        }
+       
     }
 }
 

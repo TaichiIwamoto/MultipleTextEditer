@@ -1,4 +1,9 @@
-﻿
+﻿/*********************************************
+担当者:VSによる自動生成（一部Yutaro TANAKAが編集）
+
+概要:ScreenCaptureのUI
+*********************************************/
+
 namespace MultipleTextEditor
 {
     partial class Form2

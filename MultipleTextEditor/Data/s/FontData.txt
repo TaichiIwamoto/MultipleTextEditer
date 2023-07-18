@@ -1,0 +1,1 @@
+[Font: Name=MS UI Gothic, Size=9, Units=3, GdiCharSet=128, GdiVerticalFont=False]
