@@ -1,4 +1,9 @@
-﻿
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+概要:スクリーンショット機能の範囲選択
+*********************************************/
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

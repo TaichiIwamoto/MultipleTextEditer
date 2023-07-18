@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Iwamoto Taichi
+
+概要:ページボタンが押されたときの機能の実装
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
