@@ -1,4 +1,10 @@
-﻿using System;
+﻿/***************************************
+担当者：Manato OHBA
+
+概要：「新規」ボタンが押された時の処理(新規ファイルを生成)
+
+*************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************
+担当者：Manato OHBA
+
+概要：「自動保存」ボタンが押された時の処理(自動保存機能のON,OFF)
+
+*************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
