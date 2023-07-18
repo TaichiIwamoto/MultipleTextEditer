@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Iwamoto Taichi
+
+ページの内容とフォントの設定を読み込む
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

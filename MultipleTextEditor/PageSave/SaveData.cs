@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Iwamoto Taichi
+
+ページの内容を保存する
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
