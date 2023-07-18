@@ -77,11 +77,6 @@ namespace MultipleTextEditor
             }
         }
 
-        private void List_MouseClick(object sender, MouseEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void text_memo_KeyDown(object sender, KeyEventArgs e)
         {
 

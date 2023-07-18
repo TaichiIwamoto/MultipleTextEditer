@@ -25,12 +25,14 @@ namespace MultipleTextEditor.PageSave
             }
             if (System.IO.Directory.Exists(path))
             {
+                int page = 0;
                 StreamWriter sw = new StreamWriter(path + "/PageData.txt");
                 foreach (var entry in sortedPageData)
                 {
                     sw.WriteLine(entry.Key + " " + entry.Value);
+                    page = entry.Key;
                 }
-                sw.Write("\n ");
+                sw.Write((page+1).ToString()," 仮データ","\n ");
                 sw.Close();
             }
         }
