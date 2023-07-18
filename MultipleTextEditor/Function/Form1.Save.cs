@@ -53,7 +53,7 @@ namespace MultipleTextEditor
                     Console.WriteLine("hello");
                     pageData.Add(currentPageNum,text_memo.Text);
                 }
-                sd.SaveFont(path, font);
+                sd.SavePage(path, pageData);
             }
             else
             {
