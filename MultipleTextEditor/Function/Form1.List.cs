@@ -70,7 +70,16 @@ namespace MultipleTextEditor
         private void list_CheckedChanged(object sender, EventArgs e)
         {
             isListMode = list.Checked;
-            text_memo.SelectionBullet = list.Checked;
+            if (isListMode)
+            {
+                //text_memo.SelectionBullet = list.Checked;
+                insertBullet();
+            }
+        }
+
+        private void List_MouseClick(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void text_memo_KeyDown(object sender, KeyEventArgs e)
@@ -153,31 +162,31 @@ namespace MultipleTextEditor
                             text_memo.AppendText(Environment.NewLine);
                             textChangedFlag = false;
 
-                           /* System.Windows.Forms.Button plusButton = new System.Windows.Forms.Button();
-                            plusButton.Text = "+";
-                            plusButton.Size = new Size(30, text_memo.Font.Height + 5);
-                            //plusButton.Font = new Font(text_memo.Font.FontFamily, text_memo.Font.Size);
-                            var charIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
-                            var charPosition = text_memo.GetPositionFromCharIndex(charIndex);
-                            plusButton.Location = new Point(text_memo.Left + charPosition.X + 15, text_memo.Top + charPosition.Y + 3);
+                            /* System.Windows.Forms.Button plusButton = new System.Windows.Forms.Button();
+                             plusButton.Text = "+";
+                             plusButton.Size = new Size(30, text_memo.Font.Height + 5);
+                             //plusButton.Font = new Font(text_memo.Font.FontFamily, text_memo.Font.Size);
+                             var charIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
+                             var charPosition = text_memo.GetPositionFromCharIndex(charIndex);
+                             plusButton.Location = new Point(text_memo.Left + charPosition.X + 15, text_memo.Top + charPosition.Y + 3);
 
-                            plusButton.Click += (s, ev) => IncrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
-                            plusButton.Tag = prePageNum;
-                            this.Controls.Add(plusButton);
-                            plusButton.BringToFront();
+                             plusButton.Click += (s, ev) => IncrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
+                             plusButton.Tag = prePageNum;
+                             this.Controls.Add(plusButton);
+                             plusButton.BringToFront();
 
-                            System.Windows.Forms.Button minusButton = new System.Windows.Forms.Button();
-                            minusButton.Text = "-";
-                            minusButton.Size = new Size(30, text_memo.Font.Height + 5);
+                             System.Windows.Forms.Button minusButton = new System.Windows.Forms.Button();
+                             minusButton.Text = "-";
+                             minusButton.Size = new Size(30, text_memo.Font.Height + 5);
 
-                            var minuscharIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
-                            var minuscharPosition = text_memo.GetPositionFromCharIndex(charIndex);
-                            minusButton.Location = new Point(text_memo.Left + minuscharPosition.X + 45, text_memo.Top + minuscharPosition.Y + 3);
+                             var minuscharIndex = text_memo.GetFirstCharIndexFromLine(lineIndex) + text_memo.Lines[lineIndex].Length;
+                             var minuscharPosition = text_memo.GetPositionFromCharIndex(charIndex);
+                             minusButton.Location = new Point(text_memo.Left + minuscharPosition.X + 45, text_memo.Top + minuscharPosition.Y + 3);
 
-                            minusButton.Click += (s, ev) => DecrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
-                            minusButton.Tag = prePageNum;
-                            this.Controls.Add(minusButton);
-                            minusButton.BringToFront();*/
+                             minusButton.Click += (s, ev) => DecrementX(itemList[thisItemListIndex]); // ボタンのクリックイベントにIncrementXメソッドを関連付ける
+                             minusButton.Tag = prePageNum;
+                             this.Controls.Add(minusButton);
+                             minusButton.BringToFront();*/
                         }
                     }
                 }
