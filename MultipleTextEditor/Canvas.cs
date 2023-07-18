@@ -1,4 +1,9 @@
-﻿
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+概要:ペイント機能のメイン処理
+*********************************************/
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
