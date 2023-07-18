@@ -52,7 +52,7 @@ namespace MultipleTextEditor.PageSave
                             nextNum = "-1";
                         }
                     }
-                    if (nextNum.Equals(count.ToString()))
+                    if (nextNum.Equals(count.ToString()))//次のページを読み込む処理
                     {
                         lp.Add((int.Parse(tmp[0])), tmpString);
                         count += 1;
@@ -61,7 +61,7 @@ namespace MultipleTextEditor.PageSave
                         notNext = false;
                         continue;
                     }
-                    else if (!tmpLine.Equals(" "))
+                    else if (!tmpLine.Equals(" "))//
                     {
                         tmpString += $"\n{tmpLine}";
                         Console.WriteLine("tmpString = " + tmpString);
