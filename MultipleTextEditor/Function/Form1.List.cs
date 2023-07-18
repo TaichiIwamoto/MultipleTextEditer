@@ -153,10 +153,14 @@ namespace MultipleTextEditor
                             text_memo.AppendText(Environment.NewLine);
                             textChangedFlag = false;
 
-                            
+
                         }
                     }
-                    text_memo.AppendText(Environment.NewLine);
+                    else
+                    {
+                        text_memo.AppendText(Environment.NewLine);
+                        textChangedFlag = false;
+                    }
                 }
             }
         }
