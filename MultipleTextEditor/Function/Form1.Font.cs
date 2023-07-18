@@ -9,7 +9,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+/*
+ æ‹…å½“è€…ã€€Kotaro Shirai (github name takuuo2)
 
+ æ¦‚è¦:C10 è¨­å®šå¤‰æ›´
+ãƒ•ã‚©ãƒ³ãƒˆã‚’å¤‰æ›´ã™ã‚‹æ©Ÿèƒ½ã®å®Ÿè£…
+ */
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form
@@ -18,11 +23,11 @@ namespace MultipleTextEditor
         private void FontToolStripMenuItem_Click(Object sender, EventArgs e)
         {
             ChangeToolStripMenuItemBackgroundColors();
-            // ƒtƒHƒ“ƒgƒ_ƒCƒAƒƒO‚ğ•\¦‚µ‚Äƒ†[ƒU[‚ÉƒtƒHƒ“ƒgƒTƒCƒY‚ğ‘I‘ğ‚³‚¹‚é
+            // ãƒ•ã‚©ãƒ³ãƒˆãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’è¡¨ç¤ºã—ã¦ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’é¸æŠã•ã›ã‚‹
             FontDialog fontDialog = new FontDialog();
             if (fontDialog.ShowDialog() == DialogResult.OK)
             {
-                // ‘I‘ğ‚³‚ê‚½ƒtƒHƒ“ƒgƒTƒCƒY‚ğ“K—p‚·‚é
+                // é¸æŠã•ã‚ŒãŸãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’é©ç”¨ã™ã‚‹
                 text_memo.Font = fontDialog.Font;
                 font = text_memo.Font.ToString();
                 sd.SaveFont(path, font);

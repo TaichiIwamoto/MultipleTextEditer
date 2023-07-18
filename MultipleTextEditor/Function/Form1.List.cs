@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*********************************************
+担当者:Okazaki Ren
+
+リスト機能の実装
+*********************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

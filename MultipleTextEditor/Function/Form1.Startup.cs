@@ -11,7 +11,13 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+/* 
+ 担当者　Kotaro Shirai (github name takuuo2)
 
+ 概要:C10 設定変更
+ スタートアップ機能のオン、オフを設定する
+ 
+ */
 namespace MultipleTextEditor
 {
     public partial class Form1 : Form

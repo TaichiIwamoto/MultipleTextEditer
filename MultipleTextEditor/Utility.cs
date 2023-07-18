@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+概要:画像を保存する機能
+*********************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

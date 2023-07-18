@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**************************************
+担当者：Manato OHBA
+
+概要：アプリを終了する際の処理(終了ボタンを押したとき)
+**************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

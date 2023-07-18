@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**************************************
+担当者：Manato OHBA
+
+概要：メイン機能の処理
+      ボタンを押した際の処理など
+**************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
