@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*********************************************
+担当者:Yutaro TANAKA
+
+概要:ペンサイズの変更処理
+*********************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
